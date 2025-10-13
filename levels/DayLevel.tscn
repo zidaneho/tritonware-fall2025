@@ -1,4 +1,18 @@
-[gd_scene format=3 uid="uid://cjahjjy06ptq4"]
+[gd_scene load_steps=6 format=3 uid="uid://cjahjjy06ptq4"]
+
+[ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_lobii"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_1vext"]
+
+[sub_resource type="Sky" id="Sky_lobii"]
+sky_material = SubResource("PhysicalSkyMaterial_1vext")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_1vext"]
+background_mode = 3
+sky = SubResource("Sky_lobii")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_lobii"]
 
 [node name="DayLevel" type="Node2D"]
 
@@ -119,3 +133,16 @@ scale = Vector2(2.2667174, 1.9679999)
 color = Color(0.101960786, 0.5411765, 0.7294118, 0.4745098)
 polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1vext")
+camera_attributes = SubResource("CameraAttributesPractical_lobii")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, 2)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+rotation = 1.6485332
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_lobii")]

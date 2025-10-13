@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdy31fl3mxlr5"]
+
+[ext_resource type="Texture2D" uid="uid://b6m68cdjfiou3" path="res://player/art/tail_1.png" id="1_mhpjh"]
+[ext_resource type="Texture2D" uid="uid://dxn7vx4pjy3wv" path="res://player/art/body_1.png" id="2_ndjxb"]
+[ext_resource type="Texture2D" uid="uid://7ggfrao6pdjr" path="res://player/art/right_hand.png" id="3_5qrx2"]
+[ext_resource type="Texture2D" uid="uid://bo8xh5y3jie5s" path="res://player/art/left_hand.png" id="4_b32pr"]
+[ext_resource type="Texture2D" uid="uid://dhxiajplqerir" path="res://player/art/left_foot.png" id="5_hbkom"]
+[ext_resource type="Texture2D" uid="uid://ctsklcwli7klu" path="res://player/art/right_foot.png" id="6_d4g0h"]
+[ext_resource type="Texture2D" uid="uid://bqbqp6bxbmflk" path="res://player/art/eyes.png" id="7_v4f8b"]
+[ext_resource type="Texture2D" uid="uid://dh608m8wgrkab" path="res://player/art/eyes_highlight.png" id="8_t8epa"]
+[ext_resource type="Texture2D" uid="uid://b3tmgnmdc7x5s" path="res://player/art/eyes_pupils.png" id="9_w24id"]
+
+[node name="Player" type="Node2D"]
+
+[node name="Sprites" type="Node2D" parent="."]
+position = Vector2(-6.36, -20.45)
+scale = Vector2(0.01, 0.01)
+
+[node name="Tail" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_mhpjh")
+
+[node name="Body" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("2_ndjxb")
+
+[node name="Right_Hand" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("3_5qrx2")
+
+[node name="Left_Hand" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("4_b32pr")
+
+[node name="Left_Foot" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("5_hbkom")
+
+[node name="Right_Foot" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("6_d4g0h")
+
+[node name="Eyes" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("7_v4f8b")
+
+[node name="Eyes_Highlight" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("8_t8epa")
+
+[node name="Eyes_Pupils" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("9_w24id")
