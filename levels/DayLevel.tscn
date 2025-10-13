@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://cjahjjy06ptq4"]
+
+[node name="DayLevel" type="Node2D"]
+
+[node name="EntrySide" type="Node2D" parent="."]
+visible = false
+
+[node name="Ground" type="Polygon2D" parent="EntrySide"]
+position = Vector2(191.99994, 59.839996)
+scale = Vector2(24, 1.92)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Building" type="Polygon2D" parent="EntrySide"]
+position = Vector2(-60.26749, -94.46401)
+scale = Vector2(2.2667174, 1.9679999)
+color = Color(0.37424842, 0.09384663, 0.89457214, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Door-Center" type="Polygon2D" parent="EntrySide"]
+position = Vector2(40.000004, -94.464005)
+scale = Vector2(0.9041739, 1.9680002)
+color = Color(0.6606578, 1.0107458e-06, 0.36120006, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -29.653809, 48.000004, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Building2" type="Polygon2D" parent="EntrySide"]
+position = Vector2(216, -96)
+scale = Vector2(2.2667174, 1.9679999)
+color = Color(0.37424842, 0.09384663, 0.89457214, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Wall" type="Polygon2D" parent="EntrySide"]
+position = Vector2(736.1983, -91.135994)
+scale = Vector2(2.4876034, 5.1519995)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Farms" type="Polygon2D" parent="EntrySide"]
+position = Vector2(-469.81818, -39.0144)
+scale = Vector2(14.363635, 0.7807998)
+color = Color(0.17002672, 0.42248267, 0.25053146, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48, -72, 11.28949)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Your House" type="Polygon2D" parent="EntrySide"]
+position = Vector2(496, -96)
+scale = Vector2(2.2667174, 1.9679999)
+color = Color(0, 0.33616874, 0.74761206, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="CenterSide" type="Node2D" parent="."]
+position = Vector2(0, -3.8146973e-06)
+
+[node name="Ground" type="Polygon2D" parent="CenterSide"]
+position = Vector2(141.09076, 59.84)
+scale = Vector2(27.18182, 1.92)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Door-Center" type="Polygon2D" parent="CenterSide"]
+position = Vector2(40.000004, -94.464005)
+scale = Vector2(0.9041739, 1.9680002)
+color = Color(0.6606578, 1.0107458e-06, 0.36120006, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -29.653809, 48.000004, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Building" type="Polygon2D" parent="CenterSide"]
+position = Vector2(-60.26749, -94.464005)
+scale = Vector2(2.2667174, 1.9679999)
+color = Color(0.37424842, 0.09384663, 0.89457214, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Building2" type="Polygon2D" parent="CenterSide"]
+position = Vector2(215.99998, -95.99999)
+scale = Vector2(2.2667174, 1.9679999)
+color = Color(0.37424842, 0.09384663, 0.89457214, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Shop1" type="Polygon2D" parent="CenterSide"]
+position = Vector2(-1264, -96)
+scale = Vector2(2.2667174, 1.9679999)
+color = Color(0.101960786, 0.5411765, 0.7294118, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Mayors House" type="Polygon2D" parent="CenterSide"]
+position = Vector2(1632.0001, -280)
+scale = Vector2(5.490951, 5.3808)
+color = Color(0.37424842, 0.09384663, 0.89457214, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground2" type="Polygon2D" parent="CenterSide"]
+position = Vector2(2272, 40.000008)
+scale = Vector2(24, 1.92)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Shop2" type="Polygon2D" parent="CenterSide"]
+position = Vector2(-1040, -96)
+scale = Vector2(2.2667174, 1.9679999)
+color = Color(0.101960786, 0.5411765, 0.7294118, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Shop3" type="Polygon2D" parent="CenterSide"]
+position = Vector2(-815.99994, -96)
+scale = Vector2(2.2667174, 1.9679999)
+color = Color(0.101960786, 0.5411765, 0.7294118, 0.4745098)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
