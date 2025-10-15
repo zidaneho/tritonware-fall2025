@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmjyf0j5srnmr"]
+
+[ext_resource type="PackedScene" uid="uid://dvt4dac8g0wfe" path="res://weapons/gun/pistol/Pistol.tscn" id="1_p0uco"]
+[ext_resource type="Script" uid="uid://cixo5cxjngu2d" path="res://weapons/player-weapon-test.gd" id="2_iv5da"]
+
+[node name="WeaponTest" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.38, 1.38)
+
+[node name="Pistol" parent="." instance=ExtResource("1_p0uco")]
+position = Vector2(-192, -24)
+fire_rate = 4.0
+
+[node name="TestPlayer" type="Node2D" parent="." node_paths=PackedStringArray("gun")]
+script = ExtResource("2_iv5da")
+gun = NodePath("../Pistol")
+
+[node name="FireTimer" type="Timer" parent="TestPlayer"]
+one_shot = true

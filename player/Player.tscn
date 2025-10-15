@@ -42,3 +42,5 @@ texture = ExtResource("8_t8epa")
 
 [node name="Eyes_Pupils" type="Sprite2D" parent="Sprites"]
 texture = ExtResource("9_w24id")
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvt4dac8g0wfe"]
+
+[ext_resource type="Script" uid="uid://bsh1efaxetkw7" path="res://weapons/gun/pistol/pistol.gd" id="1_yloip"]
+[ext_resource type="Texture2D" uid="uid://cv54a46n3qstd" path="res://weapons/gun/pistol/3Pistol03.png" id="2_lua60"]
+[ext_resource type="Texture2D" uid="uid://cvqss1f7dmna" path="res://weapons/gun/utils/muzzleFlare.png" id="3_16sjl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_16sjl"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_16sjl"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5fxbl"]
+gradient = SubResource("Gradient_16sjl")
+
+[sub_resource type="Curve" id="Curve_7jvyh"]
+_data = [Vector2(0, 1), 0.0, -2.8467247, 0, 0, Vector2(1, 0), -0.14576165, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_bmtml"]
+curve = SubResource("Curve_7jvyh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sy7wo"]
+particle_flag_damping_as_friction = true
+emission_shape_offset = Vector3(30, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_bmtml")
+color_ramp = SubResource("GradientTexture1D_5fxbl")
+anim_offset_max = 1.0
+
+[node name="Pistol" type="Node2D" node_paths=PackedStringArray("muzzlePosition", "muzzleParticle")]
+script = ExtResource("1_yloip")
+muzzlePosition = NodePath("Muzzle")
+muzzleParticle = NodePath("Muzzle/MuzzleParticle")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_lua60")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(23, -8)
+
+[node name="MuzzleParticle" type="GPUParticles2D" parent="Muzzle"]
+material = SubResource("CanvasItemMaterial_16sjl")
+emitting = false
+amount = 1
+texture = ExtResource("3_16sjl")
+lifetime = 0.4
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_sy7wo")
