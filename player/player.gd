@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
+@onready var sprites = $Sprites
+
 var SPEED = 500
 var GRAVITY_PERC = 1.5
 var JUMP_VELOCITY = -500
 var DOUBLE_JUMP_PERC = 0.8
 var DOUBLE_JUMP_ALLOWED = true
+var SPRITE_SCALE = 0.01
 
 # runs every frame, for physics
 func _physics_process(delta):
@@ -27,6 +30,8 @@ func _physics_process(delta):
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		sprites.scale.x = sign(direction) * SPRITE_SCALE
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * 0.2)
 
