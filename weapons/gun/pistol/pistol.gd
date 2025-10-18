@@ -12,4 +12,4 @@ func shoot():
 		muzzleParticle.restart()
 	var tracer_instance = TracerScene.instantiate()
 	get_tree().root.add_child(tracer_instance)
-	tracer_instance.setup(muzzlePosition.global_position, Vector2(50,50), bullet_color,5)
+	tracer_instance.setup(muzzlePosition.global_position, get_global_mouse_position(), bullet_color,5)

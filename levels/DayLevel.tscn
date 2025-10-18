@@ -138,9 +138,6 @@ uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 environment = SubResource("Environment_1vext")
 camera_attributes = SubResource("CameraAttributesPractical_lobii")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, 2)
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 rotation = 1.6485332
 shadow_enabled = true

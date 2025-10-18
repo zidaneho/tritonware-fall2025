@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdy31fl3mxlr5"]
+[gd_scene load_steps=11 format=3 uid="uid://bdy31fl3mxlr5"]
 
 [ext_resource type="Texture2D" uid="uid://b6m68cdjfiou3" path="res://player/art/tail_1.png" id="1_mhpjh"]
 [ext_resource type="Texture2D" uid="uid://dxn7vx4pjy3wv" path="res://player/art/body_1.png" id="2_ndjxb"]
@@ -10,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://dh608m8wgrkab" path="res://player/art/eyes_highlight.png" id="8_t8epa"]
 [ext_resource type="Texture2D" uid="uid://b3tmgnmdc7x5s" path="res://player/art/eyes_pupils.png" id="9_w24id"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhpjh"]
+radius = 14.0
+height = 40.0
+
+[node name="Player" type="CharacterBody2D"]
 
 [node name="Sprites" type="Node2D" parent="."]
 position = Vector2(-6.36, -20.45)
@@ -44,3 +48,7 @@ texture = ExtResource("8_t8epa")
 texture = ExtResource("9_w24id")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21)
+shape = SubResource("CapsuleShape2D_mhpjh")

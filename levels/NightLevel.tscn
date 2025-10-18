@@ -1,0 +1,435 @@
+[gd_scene load_steps=28 format=3 uid="uid://cu2gfv6r6dbvq"]
+
+[ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_h0kpy"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_h0kpy"]
+
+[sub_resource type="Sky" id="Sky_lobii"]
+sky_material = SubResource("PhysicalSkyMaterial_h0kpy")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_hhu4n"]
+background_mode = 3
+sky = SubResource("Sky_lobii")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7dmf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0kpy"]
+size = Vector2(1304, 544)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhu4n"]
+size = Vector2(388, 273)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dmf5"]
+size = Vector2(1122, 273)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx6eq"]
+size = Vector2(400, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u6f6"]
+size = Vector2(785, 273)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj25f"]
+size = Vector2(624.5, 488.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om71h"]
+size = Vector2(2744, 488.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqn4h"]
+size = Vector2(424, 740.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y8gl"]
+size = Vector2(424, 930.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b7f8"]
+size = Vector2(564, 930.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5tw5"]
+size = Vector2(498, 273.0625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5aog"]
+size = Vector2(1345, 273.0625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etya6"]
+size = Vector2(1968.5, 273.0625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w47bx"]
+size = Vector2(536, 280.53125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng0h6"]
+size = Vector2(280, 552.2656)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_an83a"]
+size = Vector2(1144, 112.265625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri3wg"]
+size = Vector2(2200, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjvmo"]
+size = Vector2(116, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85auv"]
+size = Vector2(120, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0px1"]
+size = Vector2(324, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0gvr"]
+size = Vector2(80, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6cdb"]
+size = Vector2(80, 24)
+
+[node name="NightLevel" type="Node2D"]
+
+[node name="Ground" type="Polygon2D" parent="."]
+position = Vector2(402.90903, 351.03998)
+scale = Vector2(14.818185, 11.0199995)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground2" type="Polygon2D" parent="."]
+position = Vector2(632, 248)
+scale = Vector2(24.90909, 2.82)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground3" type="Polygon2D" parent="."]
+position = Vector2(1462.5454, 263.744)
+scale = Vector2(43.090916, 2.492)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground5" type="Polygon2D" parent="."]
+position = Vector2(2744, 296)
+scale = Vector2(84.90909, 2.82)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, -15.79928, -32, 16, -32, 16, 8.920441, 16, 48, -57.50506, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground4" type="Polygon2D" parent="."]
+position = Vector2(-840, 56.000004)
+scale = Vector2(3.7272756, 0.19019997)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground6" type="Polygon2D" parent="."]
+position = Vector2(-3218.9753, 256)
+scale = Vector2(21.958675, 2.82)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground7" type="Polygon2D" parent="."]
+position = Vector2(5356.55, 164.544)
+scale = Vector2(26.174301, 4.3920007)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground8" type="Polygon2D" parent="."]
+position = Vector2(-169.75136, -328)
+scale = Vector2(6.4201207, 2.82)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground9" type="Polygon2D" parent="."]
+position = Vector2(536.2968, -336)
+scale = Vector2(6.4814506, 2.82)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground10" type="Polygon2D" parent="."]
+position = Vector2(1717.8181, -517.056)
+scale = Vector2(22.636364, 3.592)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Player" parent="." instance=ExtResource("1_h0kpy")]
+position = Vector2(-8, -16)
+
+[node name="Ground11" type="Polygon2D" parent="."]
+position = Vector2(-431.82547, -512)
+scale = Vector2(21.489092, 2.82)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground12" type="Polygon2D" parent="."]
+position = Vector2(-2440.8699, -632)
+scale = Vector2(36.54347, 2.82)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground13" type="Polygon2D" parent="."]
+position = Vector2(5080.1426, -696)
+scale = Vector2(44.491077, 2.82)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground14" type="Polygon2D" parent="."]
+position = Vector2(-4824, 202.0864)
+scale = Vector2(3.1471379, 4.3152)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground15" type="Polygon2D" parent="."]
+position = Vector2(-4824.29, 202.0864)
+scale = Vector2(3.143113, 4.3152)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground16" type="Polygon2D" parent="."]
+position = Vector2(-5088, -288)
+scale = Vector2(3.1471379, 13.764119)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground17" type="Polygon2D" parent="."]
+position = Vector2(5816, 215.99994)
+scale = Vector2(3.6363628, 13.891999)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground18" type="Polygon2D" parent="."]
+position = Vector2(5968, -479.99994)
+scale = Vector2(3.6363628, 13.891999)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hhu4n")
+camera_attributes = SubResource("CameraAttributesPractical_7dmf5")
+
+[node name="Ground19" type="Polygon2D" parent="."]
+position = Vector2(1040.0001, 56.000004)
+scale = Vector2(3.7272756, 0.19019997)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground20" type="Polygon2D" parent="."]
+position = Vector2(2384, 120)
+scale = Vector2(0.8677713, 0.3760801)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground21" type="Polygon2D" parent="."]
+position = Vector2(2568, 65)
+scale = Vector2(0.8677713, 0.3760801)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground22" type="Polygon2D" parent="."]
+position = Vector2(2752.0002, 16)
+scale = Vector2(0.8677713, 0.3760801)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground23" type="Polygon2D" parent="."]
+position = Vector2(-1816.0001, 64)
+scale = Vector2(3.7272756, 0.19019997)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground24" type="Polygon2D" parent="."]
+position = Vector2(-2525.818, 105.037346)
+scale = Vector2(1.3636367, 0.47838864)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground25" type="Polygon2D" parent="."]
+position = Vector2(-2740.3638, -24)
+scale = Vector2(1.2727265, 0.5141199)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -28.785492, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground26" type="Polygon2D" parent="."]
+position = Vector2(-2952, -119.999985)
+scale = Vector2(1.3140516, 0.5141199)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -28.785492, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground27" type="Polygon2D" parent="."]
+position = Vector2(-3313.5122, -227.9424)
+scale = Vector2(12.978997, 1.3768002)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground28" type="Polygon2D" parent="."]
+position = Vector2(-4018.9092, -415.1424)
+scale = Vector2(3.1818192, 5.2767997)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 8.920441, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground29" type="Polygon2D" parent="."]
+position = Vector2(-2728, -208)
+scale = Vector2(1.3140516, 0.5141199)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -28.785492, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground30" type="Polygon2D" parent="."]
+position = Vector2(1839.5491, 106.22074)
+scale = Vector2(4.528176, 1.6631482)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground31" type="Polygon2D" parent="."]
+position = Vector2(3390.5454, 105.53244)
+scale = Vector2(7.0909123, 3.7978892)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="GroundCollisions" type="Node2D" parent="."]
+
+[node name="GroundCollisions" type="StaticBody2D" parent="GroundCollisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-12, 272)
+shape = SubResource("RectangleShape2D_h0kpy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(838, 295.5)
+shape = SubResource("RectangleShape2D_hhu4n")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(1591, 320)
+shape = SubResource("RectangleShape2D_7dmf5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(1712, 128)
+shape = SubResource("RectangleShape2D_sx6eq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(2503.5, 344)
+shape = SubResource("RectangleShape2D_1u6f6")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(3191.75, 227.75)
+shape = SubResource("RectangleShape2D_rj25f")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(4724, 272)
+shape = SubResource("RectangleShape2D_om71h")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(5764, 146.125)
+shape = SubResource("RectangleShape2D_lqn4h")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(5920, -406.9375)
+shape = SubResource("RectangleShape2D_5y8gl")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-346, -664)
+shape = SubResource("RectangleShape2D_3b7f8")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(352, -664)
+shape = SubResource("RectangleShape2D_3b7f8")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-911, 295.46875)
+shape = SubResource("RectangleShape2D_n5tw5")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-1392, 320)
+shape = SubResource("RectangleShape2D_n5tw5")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-2311.5, 344)
+shape = SubResource("RectangleShape2D_y5aog")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-3855.75, 304)
+shape = SubResource("RectangleShape2D_etya6")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-5044, 204.26563)
+shape = SubResource("RectangleShape2D_w47bx")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-5176, -191.73438)
+shape = SubResource("RectangleShape2D_ng0h6")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-4108, -443.8672)
+shape = SubResource("RectangleShape2D_ng0h6")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-3680, -216)
+shape = SubResource("RectangleShape2D_an83a")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-2972, -608)
+shape = SubResource("RectangleShape2D_ri3wg")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-2764, -200)
+shape = SubResource("RectangleShape2D_bjvmo")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-2764, -201)
+shape = SubResource("RectangleShape2D_bjvmo")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-2990, -112)
+shape = SubResource("RectangleShape2D_bjvmo")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-2776, -16)
+shape = SubResource("RectangleShape2D_85auv")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-2564, 112)
+shape = SubResource("RectangleShape2D_85auv")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-1922, 68)
+shape = SubResource("RectangleShape2D_h0px1")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(-944, 58)
+shape = SubResource("RectangleShape2D_h0px1")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(936, 58)
+shape = SubResource("RectangleShape2D_h0px1")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(2360, 124)
+shape = SubResource("RectangleShape2D_d0gvr")
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(2728, 20)
+shape = SubResource("RectangleShape2D_u6cdb")
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="GroundCollisions/GroundCollisions"]
+position = Vector2(2544, 68)
+shape = SubResource("RectangleShape2D_u6cdb")

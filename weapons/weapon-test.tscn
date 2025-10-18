@@ -10,7 +10,15 @@ zoom = Vector2(1.38, 1.38)
 
 [node name="Pistol" parent="." instance=ExtResource("1_p0uco")]
 position = Vector2(-192, -24)
+gun_name = null
+damage = null
 fire_rate = 4.0
+mag_size = null
+reload_time = null
+spread = null
+recoil = null
+range = null
+bullet_color = null
 
 [node name="TestPlayer" type="Node2D" parent="." node_paths=PackedStringArray("gun")]
 script = ExtResource("2_iv5da")

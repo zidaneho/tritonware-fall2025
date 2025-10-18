@@ -43,3 +43,6 @@ texture = ExtResource("8_evewe")
 
 [node name="Eyes_Pupils" type="Sprite2D" parent="Sprites"]
 texture = ExtResource("9_8osbl")
+
+[node name="SpeechMount" type="Marker2D" parent="."]
+position = Vector2(0, -48)
