@@ -23,9 +23,19 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 runtime/balloon_path="uid://dmgf2c4hjo7cm"
 
+[display]
+
+window/size/mode=1
+window/stretch/mode="viewport"
+window/balloon_path="uid://dmgf2c4hjo7cm"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[global_group]
+
+players="The objects that users can interact and play the game through."
 
 [input]
 

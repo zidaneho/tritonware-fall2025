@@ -10,7 +10,7 @@ extends CanvasLayer
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
-@onready var portrait : TextureRect = $Portrait
+@onready var portrait : TextureRect = $Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Portrait
 ## The dialogue resource
 var resource: DialogueResource
 

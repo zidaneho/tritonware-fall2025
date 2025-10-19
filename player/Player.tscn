@@ -15,7 +15,7 @@
 radius = 14.0
 height = 40.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["players"]]
 script = ExtResource("1_ndjxb")
 
 [node name="Sprites" type="Node2D" parent="."]
@@ -52,11 +52,9 @@ texture = ExtResource("9_w24id")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -82)
 scale = Vector2(0.9921133, 0.99235344)
-zoom = Vector2(2, 2)
+limit_enabled = false
+limit_smoothed = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_mhpjh")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(-4.2437263, -1.2134458)

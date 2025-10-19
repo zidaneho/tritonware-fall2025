@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://c0b3gxad13a7q"]
+[gd_scene load_steps=2 format=3 uid="uid://c0b3gxad13a7q"]
+
+[ext_resource type="PackedScene" uid="uid://db6jv8kwyglrf" path="res://npc/npc1/NPC1.tscn" id="1_87cl4"]
 
 [node name="TestNpc" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Npc1" parent="." instance=ExtResource("1_87cl4")]

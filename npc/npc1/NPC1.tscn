@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://db6jv8kwyglrf"]
+[gd_scene load_steps=12 format=3 uid="uid://db6jv8kwyglrf"]
 
 [ext_resource type="Texture2D" uid="uid://b6m68cdjfiou3" path="res://player/art/tail_1.png" id="1_ees1q"]
 [ext_resource type="Texture2D" uid="uid://dxn7vx4pjy3wv" path="res://player/art/body_1.png" id="2_31gm4"]
@@ -9,12 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://bqbqp6bxbmflk" path="res://player/art/eyes.png" id="7_74fdg"]
 [ext_resource type="Texture2D" uid="uid://dh608m8wgrkab" path="res://player/art/eyes_highlight.png" id="8_evewe"]
 [ext_resource type="Texture2D" uid="uid://b3tmgnmdc7x5s" path="res://player/art/eyes_pupils.png" id="9_8osbl"]
+[ext_resource type="Script" uid="uid://br7ecjouh1euc" path="res://npc/DialoguePlayer.gd" id="10_lmwou"]
+[ext_resource type="Resource" uid="uid://dhg83aqrycrna" path="res://npc/npc1/dialogue/day1.dialogue" id="11_ai6sv"]
 
 [node name="Npc1" type="Node2D"]
 
 [node name="Sprites" type="Node2D" parent="."]
-position = Vector2(-6.36, -20.45)
-scale = Vector2(0.01, 0.01)
+position = Vector2(-56.999996, -199.99998)
+scale = Vector2(0.1, 0.1)
 
 [node name="Tail" type="Sprite2D" parent="Sprites"]
 texture = ExtResource("1_ees1q")
@@ -46,3 +48,7 @@ texture = ExtResource("9_8osbl")
 
 [node name="SpeechMount" type="Marker2D" parent="."]
 position = Vector2(0, -48)
+
+[node name="DialoguePlayer" type="Node2D" parent="."]
+script = ExtResource("10_lmwou")
+dialogue_resource = ExtResource("11_ai6sv")
