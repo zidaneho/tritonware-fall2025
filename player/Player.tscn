@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdy31fl3mxlr5"]
+[gd_scene load_steps=15 format=3 uid="uid://bdy31fl3mxlr5"]
 
 [ext_resource type="Texture2D" uid="uid://b6m68cdjfiou3" path="res://player/art/tail_1.png" id="1_mhpjh"]
 [ext_resource type="Script" uid="uid://d0mlgtxma1xmk" path="res://player/player.gd" id="1_ndjxb"]
@@ -15,7 +15,20 @@
 radius = 14.0
 height = 40.0
 
+[sub_resource type="Animation" id="Animation_ndjxb"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_5qrx2"]
+resource_name = "Run"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5qrx2"]
+_data = {
+&"Idle": SubResource("Animation_ndjxb"),
+&"Run": SubResource("Animation_5qrx2")
+}
+
 [node name="Player" type="CharacterBody2D" groups=["players"]]
+collision_layer = 2
 script = ExtResource("1_ndjxb")
 
 [node name="Sprites" type="Node2D" parent="."]
@@ -52,10 +65,20 @@ texture = ExtResource("9_w24id")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -54)
 scale = Vector2(0.9921133, 0.99235344)
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 limit_enabled = false
 limit_smoothed = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_mhpjh")
+
+[node name="InvincibilityTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5qrx2")
+}
+
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

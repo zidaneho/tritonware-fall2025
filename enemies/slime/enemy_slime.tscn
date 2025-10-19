@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbqtin2aa8fvc"]
+[gd_scene load_steps=10 format=3 uid="uid://bbqtin2aa8fvc"]
 
 [ext_resource type="Texture2D" uid="uid://dotab23r7ixvv" path="res://enemies/slime/slime_idle.png" id="1_hmymp"]
 [ext_resource type="Script" uid="uid://cxegb3dfpiukf" path="res://enemies/slime/enemy_slime.gd" id="1_opsid"]
@@ -9,17 +9,20 @@
 [ext_resource type="Texture2D" uid="uid://cym1dulmwbr1v" path="res://enemies/slime/slime_die.png" id="6_q6clb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjgn1"]
-radius = 15.0
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opsid"]
+radius = 16.03122
 
 [node name="EnemySlime" type="CharacterBody2D"]
+collision_layer = 4
 script = ExtResource("1_opsid")
 jump_delay_time = 1.0
 jump_air_delay_time = 1.0
-attack_delay = 1.0
-attack_range = 20
 
 [node name="Sprites" type="Node2D" parent="."]
-scale = Vector2(0.04, 0.04)
+position = Vector2(0, 2)
+scale = Vector2(0.06, 0.06)
 
 [node name="Idle" type="Sprite2D" parent="Sprites"]
 texture = ExtResource("1_hmymp")
@@ -45,7 +48,7 @@ visible = false
 texture = ExtResource("6_q6clb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -10)
+position = Vector2(1, -8)
 scale = Vector2(1, 0.62305605)
 shape = SubResource("CircleShape2D_mjgn1")
 
@@ -58,8 +61,9 @@ one_shot = true
 [node name="JumpCooldownTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="AttackDelayTimer" type="Timer" parent="."]
-one_shot = true
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_mask = 2
 
-[node name="AttackEndTimer" type="Timer" parent="."]
-one_shot = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(1, -11)
+shape = SubResource("CircleShape2D_opsid")
