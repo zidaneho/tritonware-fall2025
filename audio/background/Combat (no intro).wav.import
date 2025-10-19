@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://doeqm6q1ay7n6"
+path="res://.godot/imported/Combat (no intro).wav-0782d8307f5c56066d6377d5cad67d4c.sample"
+
+[deps]
+
+source_file="res://audio/background/Combat (no intro).wav"
+dest_files=["res://.godot/imported/Combat (no intro).wav-0782d8307f5c56066d6377d5cad67d4c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

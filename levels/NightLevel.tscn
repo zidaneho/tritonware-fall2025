@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://cu2gfv6r6dbvq"]
+[gd_scene load_steps=29 format=3 uid="uid://cu2gfv6r6dbvq"]
 
 [ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_h0kpy"]
+[ext_resource type="AudioStream" uid="uid://doeqm6q1ay7n6" path="res://audio/background/Combat (no intro).wav" id="2_hhu4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0kpy"]
 size = Vector2(1304, 544)
@@ -435,3 +436,7 @@ position = Vector2(-8, -16)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hhu4n")
 camera_attributes = SubResource("CameraAttributesPractical_7dmf5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hhu4n")
+autoplay = true
