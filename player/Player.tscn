@@ -50,8 +50,9 @@ texture = ExtResource("8_t8epa")
 texture = ExtResource("9_w24id")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -82)
+position = Vector2(0, -54)
 scale = Vector2(0.9921133, 0.99235344)
+zoom = Vector2(3, 3)
 limit_enabled = false
 limit_smoothed = true
 

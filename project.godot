@@ -26,7 +26,6 @@ runtime/balloon_path="uid://dmgf2c4hjo7cm"
 [display]
 
 window/size/mode=1
-window/stretch/mode="viewport"
 window/balloon_path="uid://dmgf2c4hjo7cm"
 
 [editor_plugins]

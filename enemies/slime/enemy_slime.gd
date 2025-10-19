@@ -80,7 +80,7 @@ func _process(_delta: float) -> void:
 		if attack_end_timer.is_stopped():
 			state = SlimeStates.IDLE
 	elif state == SlimeStates.AIR:
-		play_sprite("Air",false)
+		play_sprite("Air")
 		if is_on_floor() and jump_air_delay_timer.is_stopped():
 			state = SlimeStates.IDLE
 	
@@ -110,5 +110,6 @@ func play_sprite(key, flip_to_player=true):
 	current_sprite = sprite
 	if flip_to_player and player:
 		var direction = player.global_position - global_position
-		current_sprite.flip_h = sign(direction.x)
-		print(current_sprite.flip_h)
+		current_sprite.flip_h = true if sign(direction.x) < 0 else false
+		print(direction.x,current_sprite.flip_h)
+		
