@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0djnlrl33y8u"]
+
+[ext_resource type="Script" uid="uid://cjnaveqm3b3dr" path="res://components/game_ui.gd" id="1_686k3"]
+
+[node name="GameUi" type="CanvasLayer"]
+script = ExtResource("1_686k3")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameInfoContainer" type="MarginContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -261.0
+offset_bottom = 217.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/GameInfoContainer"]
+layout_mode = 2
+
+[node name="DayLabel" type="Label" parent="Container/GameInfoContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Day 1"
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="Container/GameInfoContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Hour : Minute AM"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Container/GameInfoContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Slime Overload:"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Container/GameInfoContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayerInfoContainer" type="MarginContainer" parent="Container"]
+layout_mode = 1
+offset_right = 307.0
+offset_bottom = 172.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/PlayerInfoContainer"]
+layout_mode = 2
+
+[node name="HealthContainer" type="HBoxContainer" parent="Container/PlayerInfoContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Container/PlayerInfoContainer/VBoxContainer/HealthContainer"]
+layout_mode = 2
+text = "HP: "
+
+[node name="ProgressBar" type="ProgressBar" parent="Container/PlayerInfoContainer/VBoxContainer/HealthContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 100.0
+
+[node name="NotifcationTimer" type="Timer" parent="."]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://nluivvs6cv6i"]
+
+[ext_resource type="PackedScene" uid="uid://yhah20k7x0u" path="res://components/TimeManager.tscn" id="1_8t8nv"]
+[ext_resource type="Script" uid="uid://cg7xahf8bm3uy" path="res://components/ApocMeterManager.gd" id="2_5nqnt"]
+[ext_resource type="PackedScene" uid="uid://d0djnlrl33y8u" path="res://components/GameUI.tscn" id="3_qqfom"]
+
+[node name="GameWrapper" type="Node2D"]
+
+[node name="TimeManager" parent="." instance=ExtResource("1_8t8nv")]
+
+[node name="ApocMeterManager" type="Node2D" parent="."]
+script = ExtResource("2_5nqnt")
+
+[node name="GameUi" parent="." instance=ExtResource("3_qqfom")]
+
+[connection signal="day_over" from="TimeManager" to="ApocMeterManager" method="_on_time_manager_day_over"]
+[connection signal="time_changed" from="TimeManager" to="GameUi" method="_on_time_changed"]
+[connection signal="apoc_progress_updated" from="ApocMeterManager" to="GameUi" method="_on_apoc_meter_manager_apoc_progress_updated"]

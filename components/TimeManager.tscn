@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://yhah20k7x0u"]
+
+[ext_resource type="Script" uid="uid://bod4deplm4qdo" path="res://components/TimeManager.gd" id="1_c0muy"]
+
+[node name="TimeManager" type="Node2D"]
+script = ExtResource("1_c0muy")
+
+[node name="MinuteTimer" type="Timer" parent="."]
+wait_time = 60.0

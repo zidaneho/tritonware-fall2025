@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var sprites = $Sprites
 @onready var invincibility_timer = $InvincibilityTimer
+@onready var animation_player = $AnimationPlayer
 
 var SPEED = 500
 var GRAVITY_PERC = 1.5
@@ -10,6 +11,7 @@ var DOUBLE_JUMP_PERC = 0.8
 var DOUBLE_JUMP_ALLOWED = true
 var SPRITE_SCALE = 0.01
 var health = 3
+var max_health = 3
 
 var is_invincible = false
 var invincible_time = 1
@@ -54,6 +56,8 @@ func take_damage(damage, attacker_position):
 		return
 	
 	health -= damage
+	EventBus.player_took_damage.emit(health,max_health)
+	
 	var recoilForce = 0
 	if damage <= 1:
 		recoilForce = 2000
