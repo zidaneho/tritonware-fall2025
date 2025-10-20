@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 EventBus="*res://components/EventBus.gd"
+DataManager="*res://components/DataManager.gd"
 
 [dialogue_manager]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdy31fl3mxlr5"]
+[gd_scene load_steps=18 format=3 uid="uid://bdy31fl3mxlr5"]
 
 [ext_resource type="Texture2D" uid="uid://b6m68cdjfiou3" path="res://player/art/tail_1.png" id="1_mhpjh"]
 [ext_resource type="Script" uid="uid://d0mlgtxma1xmk" path="res://player/player.gd" id="1_ndjxb"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bqbqp6bxbmflk" path="res://player/art/eyes.png" id="7_v4f8b"]
 [ext_resource type="Texture2D" uid="uid://dh608m8wgrkab" path="res://player/art/eyes_highlight.png" id="8_t8epa"]
 [ext_resource type="Texture2D" uid="uid://b3tmgnmdc7x5s" path="res://player/art/eyes_pupils.png" id="9_w24id"]
+[ext_resource type="Script" uid="uid://cw4orb3ndf8mr" path="res://components/WeaponManager.gd" id="11_b32pr"]
+[ext_resource type="Resource" uid="uid://b25ortncxi5ps" path="res://weapons/gun/pistol/pistol.tres" id="12_hbkom"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhpjh"]
 radius = 14.0
@@ -331,5 +333,10 @@ one_shot = true
 libraries = {
 &"": SubResource("AnimationLibrary_5qrx2")
 }
+
+[node name="WeaponManager" type="Node2D" parent="." node_paths=PackedStringArray("right_hand")]
+script = ExtResource("11_b32pr")
+starting_weapon = ExtResource("12_hbkom")
+right_hand = NodePath("../Sprites/Right_Hand")
 
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
