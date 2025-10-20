@@ -11,7 +11,7 @@ var DOUBLE_JUMP_PERC = 0.8
 var DOUBLE_JUMP_ALLOWED = true
 var SPRITE_SCALE = 0.01
 var health = 3
-var max_health = 3
+var MAX_HEALTH = 3
 
 var is_invincible = false
 var invincible_time = 1
@@ -39,14 +39,15 @@ func _physics_process(delta):
 		
 	# left/right
 	if is_in_knockback:
-		velocity.x = move_toward(velocity.x,0,knockback_decay* delta)
+		velocity.x = move_toward(velocity.x, 0, knockback_decay * delta)
 	else:
 		var direction := Input.get_axis("move_left", "move_right")
 		if direction:
+			animation_player.play("Run")
 			velocity.x = direction * SPEED
 			sprites.scale.x = sign(direction) * SPRITE_SCALE
-			
 		else:
+			animation_player.play("Idle")
 			velocity.x = move_toward(velocity.x, 0, SPEED * 0.2)
 
 	move_and_slide()
@@ -56,7 +57,7 @@ func take_damage(damage, attacker_position):
 		return
 	
 	health -= damage
-	EventBus.player_took_damage.emit(health,max_health)
+	EventBus.player_took_damage.emit(health,MAX_HEALTH)
 	
 	var recoilForce = 0
 	if damage <= 1:
