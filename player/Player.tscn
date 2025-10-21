@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bdy31fl3mxlr5"]
+[gd_scene load_steps=33 format=3 uid="uid://bdy31fl3mxlr5"]
 
 [ext_resource type="Texture2D" uid="uid://b6m68cdjfiou3" path="res://player/art/tail_1.png" id="1_mhpjh"]
 [ext_resource type="Script" uid="uid://d0mlgtxma1xmk" path="res://player/player.gd" id="1_ndjxb"]
@@ -14,6 +14,16 @@
 [ext_resource type="Resource" uid="uid://drxrmt4ahnmgq" path="res://weapons/gun/super_pistol/super_pistol.tres" id="12_b32pr"]
 [ext_resource type="Resource" uid="uid://b25ortncxi5ps" path="res://weapons/gun/pistol/pistol.tres" id="12_hbkom"]
 [ext_resource type="Script" uid="uid://dai2x6s8ti0bg" path="res://weapons/WeaponData.gd" id="13_d4g0h"]
+[ext_resource type="AudioStream" uid="uid://b35kiysfc76ec" path="res://audio/player/footsteps-grass/SFX_EQUIPED - FootstepGrassv1.wav" id="15_2m0d2"]
+[ext_resource type="AudioStream" uid="uid://ce6pinfknnmxg" path="res://audio/player/footsteps-grass/SFX_EQUIPED - FootstepGrassv2.wav" id="16_8nth8"]
+[ext_resource type="AudioStream" uid="uid://dwhthpqfbqc55" path="res://audio/player/footsteps-grass/SFX_EQUIPED - FootstepGrassv3.wav" id="17_8tqfn"]
+[ext_resource type="AudioStream" uid="uid://du7yfpfatxq50" path="res://audio/player/footsteps-grass/SFX_EQUIPED - FootstepGrassv4.wav" id="18_stbqk"]
+[ext_resource type="AudioStream" uid="uid://b3mlt35xqynph" path="res://audio/player/footsteps-grass/SFX_EQUIPED - FootstepGrassv5.wav" id="19_y617q"]
+[ext_resource type="AudioStream" uid="uid://k534mktoejnj" path="res://audio/player/footsteps-gravel/SFX_FootstepDragGravelStonev1.wav" id="20_8eyfg"]
+[ext_resource type="AudioStream" uid="uid://c77oqitx8hkmg" path="res://audio/player/footsteps-gravel/SFX_FootstepDragGravelStonev2.wav" id="21_76mgg"]
+[ext_resource type="AudioStream" uid="uid://ylo42uwgt8q0" path="res://audio/player/footsteps-gravel/SFX_FootstepDragGravelStonev3.wav" id="22_ddnt4"]
+[ext_resource type="AudioStream" uid="uid://dc7qg4c4j1k63" path="res://audio/player/footsteps-gravel/SFX_FootstepDragGravelStonev4.wav" id="23_a0lmo"]
+[ext_resource type="AudioStream" uid="uid://cada45kaq7veb" path="res://audio/player/SFX_swishdash02.wav" id="24_8nth8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhpjh"]
 radius = 14.0
@@ -279,6 +289,30 @@ _data = {
 &"Run": SubResource("Animation_5qrx2")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_234y4"]
+random_pitch = 1.2
+random_volume_offset_db = 0.1
+streams_count = 5
+stream_0/stream = ExtResource("15_2m0d2")
+stream_1/stream = ExtResource("16_8nth8")
+stream_2/stream = ExtResource("17_8tqfn")
+stream_3/stream = ExtResource("18_stbqk")
+stream_4/stream = ExtResource("19_y617q")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_u8vxv"]
+random_pitch = 1.2
+random_volume_offset_db = 0.1
+streams_count = 4
+stream_0/stream = ExtResource("20_8eyfg")
+stream_1/stream = ExtResource("21_76mgg")
+stream_2/stream = ExtResource("22_ddnt4")
+stream_3/stream = ExtResource("23_a0lmo")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8tqfn"]
+random_pitch = 1.3
+streams_count = 1
+stream_0/stream = ExtResource("24_8nth8")
+
 [node name="Player" type="CharacterBody2D" groups=["players"]]
 collision_layer = 2
 script = ExtResource("1_ndjxb")
@@ -355,5 +389,14 @@ right_hand_weapon = NodePath("../Sprites/Right_Hand_Weapon_Pivot/Weapon_Pivot")
 right_hand = NodePath("../Sprites/Right_Hand")
 start_unarmed = true
 test_weapons = Array[ExtResource("13_d4g0h")]([ExtResource("12_hbkom"), ExtResource("12_b32pr")])
+
+[node name="DirtFootstepAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_234y4")
+
+[node name="GravelFootstepAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_u8vxv")
+
+[node name="DashAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_8tqfn")
 
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
