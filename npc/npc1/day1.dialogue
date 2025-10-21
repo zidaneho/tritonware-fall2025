@@ -1,11 +1,11 @@
-~ start
+~ start0
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
 Nathan: Here are some choices.
 - First one
 	Nathan: You picked the first one.
 - Second one
 	Nathan: You picked the second one.
-- Start again => start
+- Start again => start0
 - End the conversation => END
 Nathan: For more information see the online documentation.
 => END

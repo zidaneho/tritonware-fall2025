@@ -4,17 +4,23 @@ const SAVE_PATH = "user://game.save"
 
 # This dictionary holds the "runtime" data your game uses.
 # We set defaults for a new game.
+const saved_npc_states_default = {
+	"npc1":{"heart_level":0,"is_alive":true},
+}
 var game_data = {
 	"unlocked_weapons": [] as Array[WeaponData], # This will hold loaded WeaponData resources
+	"saved_npc_states" : saved_npc_states_default,
 	"player_gold": 0,
 	"current_level": 1,
 	"music_volume": 0.8
+	
 }
+
+
 
 # When the game first launches, load all data from the file.
 func _ready():
 	load_game()
-
 
 # --- Public Functions (How other scripts talk to it) ---
 
@@ -47,6 +53,17 @@ func set_music_volume(volume: float):
 func get_music_volume() -> float:
 	return game_data.music_volume
 
+func get_heart_level(npc_id : String) -> int:
+	if game_data.saved_npc_states.has(npc_id):
+		return game_data.saved_npc_states[npc_id].heart_level
+	push_warning("Tried to get state for unknown NPC: %s" % [npc_id])
+	return 0
+func set_heart_level(npc_id : String, level : int):
+	if game_data.saved_npc_states.has(npc_id):
+		game_data.saved_npc_states[npc_id].heart_level = level
+	else:
+		push_warning("Tried to set state for unknown NPC: %s" % [npc_id])
+		
 # --- Save/Load Logic (The core of the manager) ---
 
 func save_game():
@@ -71,8 +88,10 @@ func save_game():
 	# 3. Overwrite the array in our save_dict with the new string array
 	save_dict["unlocked_weapons"] = weapon_paths
 	
+	
 	# 4. Store the *prepared* dictionary
 	file.store_var(save_dict)
+	
 	file.close()
 	print("Game saved successfully.")
 
@@ -97,6 +116,7 @@ func load_game():
 	game_data.player_gold = save_dict.get("player_gold", 0)
 	game_data.current_level = save_dict.get("current_level", 1)
 	game_data.music_volume = save_dict.get("music_volume", 0.8)
+	game_data.saved_npc_states = save_dict.get("saved_npc_states",saved_npc_states_default)
 
 	# 2. Convert saved weapon paths back into loaded WeaponData resources
 	game_data.unlocked_weapons.clear()
