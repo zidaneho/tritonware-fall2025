@@ -32,6 +32,8 @@ func update_health_bar(current_health, max_health):
 
 func on_player_weapon_change(new_weapon):
 	if new_weapon == null:
+		curr_weapon_icon.texture = null
+		curr_weapon_label.text = ""
 		return
 	curr_weapon_icon.texture = new_weapon.icon
 	curr_weapon_label.text = new_weapon.weapon_name

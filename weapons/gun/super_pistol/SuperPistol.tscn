@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0kruaeunlbq0"]
+
+[ext_resource type="Texture2D" uid="uid://ddff1t8p46oeq" path="res://weapons/gun/super_pistol/3Pistol03.png" id="1_gkhtl"]
+[ext_resource type="Texture2D" uid="uid://cvqss1f7dmna" path="res://weapons/gun/utils/muzzleFlare.png" id="2_ptf4q"]
+
+[sub_resource type="GDScript" id="GDScript_iev10"]
+script/source = "extends Gun
+
+@export var muzzlePosition : Marker2D
+@export var muzzleParticle : GPUParticles2D
+const TracerScene = preload('res://weapons/gun/utils/tracer.tscn')
+
+
+func shoot():
+	if muzzleParticle.emitting:
+		muzzleParticle.restart()
+	else:
+		muzzleParticle.emitting = true
+		muzzleParticle.restart()
+		
+	var startPoint = muzzlePosition.global_position
+	var endPoint = startPoint + (get_global_mouse_position() - muzzlePosition.global_position).normalized() * self.range
+	var space_state = get_world_2d().direct_space_state
+	# use global coordinates, not local to node
+	var query = PhysicsRayQueryParameters2D.create(startPoint,endPoint)
+	var result = space_state.intersect_ray(query)
+	
+	var tracer_instance = TracerScene.instantiate()
+	get_tree().root.add_child(tracer_instance)
+	tracer_instance.setup(startPoint, endPoint, bullet_color,5)
+"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_16sjl"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_16sjl"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5fxbl"]
+gradient = SubResource("Gradient_16sjl")
+
+[sub_resource type="Curve" id="Curve_7jvyh"]
+_data = [Vector2(0, 1), 0.0, -2.8467247, 0, 0, Vector2(1, 0), -0.14576165, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_bmtml"]
+curve = SubResource("Curve_7jvyh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sy7wo"]
+particle_flag_damping_as_friction = true
+emission_shape_offset = Vector3(30, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+scale_min = 40.0
+scale_max = 45.0
+scale_curve = SubResource("CurveTexture_bmtml")
+color_ramp = SubResource("GradientTexture1D_5fxbl")
+anim_offset_max = 1.0
+
+[node name="SuperPistol" type="Node2D" node_paths=PackedStringArray("muzzlePosition", "muzzleParticle")]
+script = SubResource("GDScript_iev10")
+muzzlePosition = NodePath("Muzzle")
+muzzleParticle = NodePath("Muzzle/MuzzleParticle")
+fire_rate = 5.0
+mag_size = 20
+range = 1500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.7620292, 0, 0.20177156, 1)
+texture_filter = 1
+position = Vector2(544.5, 0)
+scale = Vector2(164.05882, 100)
+texture = ExtResource("1_gkhtl")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(1789, -354)
+
+[node name="MuzzleParticle" type="GPUParticles2D" parent="Muzzle"]
+material = SubResource("CanvasItemMaterial_16sjl")
+position = Vector2(1464, -43)
+emitting = false
+amount = 1
+texture = ExtResource("2_ptf4q")
+lifetime = 0.4
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_sy7wo")

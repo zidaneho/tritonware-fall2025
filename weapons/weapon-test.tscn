@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmjyf0j5srnmr"]
+[gd_scene load_steps=4 format=3 uid="uid://cmjyf0j5srnmr"]
 
+[ext_resource type="PackedScene" uid="uid://nluivvs6cv6i" path="res://components/GameWrapper.tscn" id="1_iv5da"]
 [ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_p0uco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv5da"]
 size = Vector2(2865, 90)
 
 [node name="WeaponTest" type="Node2D"]
+
+[node name="GameWrapper" parent="." instance=ExtResource("1_iv5da")]
 
 [node name="Player" parent="." instance=ExtResource("1_p0uco")]
 
