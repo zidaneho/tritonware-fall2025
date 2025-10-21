@@ -316,7 +316,8 @@ texture = ExtResource("8_t8epa")
 texture = ExtResource("9_w24id")
 
 [node name="Right_Hand_Weapon_Pivot" type="Node2D" parent="Sprites"]
-position = Vector2(636, 545.00006)
+position = Vector2(635.99994, 545.0001)
+rotation = -1.5449265
 
 [node name="Weapon_Pivot" type="Marker2D" parent="Sprites/Right_Hand_Weapon_Pivot"]
 position = Vector2(2500, 0)

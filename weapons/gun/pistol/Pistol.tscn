@@ -40,6 +40,7 @@ anim_offset_max = 1.0
 script = ExtResource("1_yloip")
 muzzlePosition = NodePath("Muzzle")
 muzzleParticle = NodePath("Muzzle/MuzzleParticle")
+range = 500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -57,4 +58,5 @@ amount = 1
 texture = ExtResource("3_16sjl")
 lifetime = 0.4
 one_shot = true
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_sy7wo")

@@ -1,14 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmjyf0j5srnmr"]
+[gd_scene load_steps=3 format=3 uid="uid://cmjyf0j5srnmr"]
 
-[ext_resource type="PackedScene" uid="uid://nluivvs6cv6i" path="res://components/GameWrapper.tscn" id="1_iv5da"]
 [ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_p0uco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv5da"]
-size = Vector2(352, 90)
+size = Vector2(2865, 90)
 
 [node name="WeaponTest" type="Node2D"]
-
-[node name="GameWrapper" parent="." instance=ExtResource("1_iv5da")]
 
 [node name="Player" parent="." instance=ExtResource("1_p0uco")]
 
@@ -16,5 +13,11 @@ size = Vector2(352, 90)
 position = Vector2(0, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 35)
+position = Vector2(181.5, 35)
 shape = SubResource("RectangleShape2D_iv5da")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+position = Vector2(149.24129, 75)
+scale = Vector2(12.189656, 3.25)
+polygon = PackedVector2Array(-112, -24, -112, 8, 120, 8, 120, -24)
+uv = PackedVector2Array(-112, -24, -112, 8, 120, 8, 120, -24)

@@ -1,8 +1,8 @@
-extends Node2D
+class_name Gun extends Node2D
 
 
 
-class_name Gun
+
 
 @export var gun_name : String = "Gun"
 @export var damage : int = 0

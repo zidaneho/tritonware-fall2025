@@ -8,7 +8,9 @@ var unlocked_weapons : Array[WeaponData]
 @export var right_hand : Node2D        # The sprite/node for the empty hand
 var current_weapon_index : int = 0
 var current_weapon : WeaponData
-var current_weapon_instance : Node     # The currently equipped weapon scene
+var current_weapon_instance : Node
+
+   # The currently equipped weapon scene
 
 func _ready() -> void:
 	# 1. Get the persistent list from our global singleton
@@ -39,27 +41,16 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	# --- NEW AIMING & FLIPPING LOGIC ---
-	if right_hand_pivot == null:
-		return # Can't aim without a pivot
-
-	var player_node = get_parent()
-	if not player_node is Node2D:
-		print("Warning: WeaponManager parent is not a Node2D.")
-		return 
-
-	# Get mouse position relative to the *player* to decide on flipping
-	var mouse_pos_relative_to_player = player_node.get_local_mouse_position()
-
-	# 1. Handle Sprite Flipping (see explanation below)
-	if mouse_pos_relative_to_player.x < 0:
-		scale.x = -1
-	else:
-		scale.x = 1
-
-	# 2. Calculate Aiming Angle
-	# Get mouse position relative to *this* node for accurate angle
-	right_hand_pivot.look_at(get_global_mouse_position())
+	if Input.is_action_just_pressed("fire") and current_weapon_instance:
+		if current_weapon_instance.has_method("shoot"):
+			current_weapon_instance.shoot()
+	
+	if right_hand_pivot:
+		right_hand_pivot.look_at(get_global_mouse_position())
+	
+	
+	
+	
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -69,7 +60,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		current_weapon_index = (current_weapon_index + 1) % unlocked_weapons.size()
 		equip_weapon(current_weapon_index)
-
+	
 
 func equip_weapon(index: int) -> void:
 	if index < 0 or index >= unlocked_weapons.size():
