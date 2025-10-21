@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0djnlrl33y8u"]
+[gd_scene load_steps=3 format=3 uid="uid://d0djnlrl33y8u"]
 
 [ext_resource type="Script" uid="uid://cjnaveqm3b3dr" path="res://components/game_ui.gd" id="1_686k3"]
+[ext_resource type="Texture2D" uid="uid://cv54a46n3qstd" path="res://weapons/gun/pistol/3Pistol03.png" id="2_aq65j"]
 
 [node name="GameUi" type="CanvasLayer"]
 script = ExtResource("1_686k3")
@@ -75,5 +76,29 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 value = 100.0
+
+[node name="WeaponContainer" type="VBoxContainer" parent="Container/PlayerInfoContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemContainer" type="MarginContainer" parent="Container/PlayerInfoContainer/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="Container/PlayerInfoContainer/VBoxContainer/WeaponContainer/ItemContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_aq65j")
+
+[node name="Label" type="Label" parent="Container/PlayerInfoContainer/VBoxContainer/WeaponContainer"]
+layout_mode = 2
+text = "Pistol"
+horizontal_alignment = 1
 
 [node name="NotifcationTimer" type="Timer" parent="."]

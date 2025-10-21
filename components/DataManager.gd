@@ -5,7 +5,7 @@ const SAVE_PATH = "user://game.save"
 # This dictionary holds the "runtime" data your game uses.
 # We set defaults for a new game.
 var game_data = {
-	"unlocked_weapons": [], # This will hold loaded WeaponData resources
+	"unlocked_weapons": [] as Array[WeaponData], # This will hold loaded WeaponData resources
 	"player_gold": 0,
 	"current_level": 1,
 	"music_volume": 0.8

@@ -30,8 +30,8 @@ particle_flag_damping_as_friction = true
 emission_shape_offset = Vector3(30, 0, 0)
 spread = 180.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.79999995
-scale_max = 1.1999999
+scale_min = 40.0
+scale_max = 45.0
 scale_curve = SubResource("CurveTexture_bmtml")
 color_ramp = SubResource("GradientTexture1D_5fxbl")
 anim_offset_max = 1.0
@@ -43,13 +43,15 @@ muzzleParticle = NodePath("Muzzle/MuzzleParticle")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(100, 100)
 texture = ExtResource("2_lua60")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(23, -8)
+position = Vector2(793, -295)
 
 [node name="MuzzleParticle" type="GPUParticles2D" parent="Muzzle"]
 material = SubResource("CanvasItemMaterial_16sjl")
+position = Vector2(1464, -43)
 emitting = false
 amount = 1
 texture = ExtResource("3_16sjl")
