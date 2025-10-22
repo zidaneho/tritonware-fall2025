@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cym1dulmwbr1v" path="res://enemies/slime/slime_die.png" id="6_q6clb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjgn1"]
-radius = 14.0
+radius = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_opsid"]
-radius = 16.03122
+radius = 21.0
 
 [node name="EnemySlime" type="CharacterBody2D"]
 collision_layer = 4
@@ -48,7 +48,7 @@ visible = false
 texture = ExtResource("6_q6clb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -8)
+position = Vector2(1, -12)
 scale = Vector2(1, 0.62305605)
 shape = SubResource("CircleShape2D_mjgn1")
 

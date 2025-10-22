@@ -56,6 +56,7 @@ func _process(_delta: float) -> void:
 	if not is_dead and health <= 0:
 		state = SlimeStates.DEATH
 		is_dead = true
+		get_tree().create_timer(0.3).timeout.connect(queue_free)
 	
 	match state:
 		SlimeStates.IDLE:
@@ -96,7 +97,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += gravity * 0.5 * delta
 		
 	if player and state == SlimeStates.AIR:
 		velocity.x = jump_direction * speed
@@ -147,6 +148,7 @@ func take_damage(damage_amount, attacker_pos):
 	
 	var recoil_direction = (global_position - attacker_pos).normalized()
 	velocity = recoil_direction * recoil_strength
+	velocity.y -= 100
 	
 	if current_sprite:
 		current_sprite.modulate = flash_color

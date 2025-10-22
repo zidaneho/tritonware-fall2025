@@ -96,9 +96,18 @@ texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_aq65j")
 
-[node name="Label" type="Label" parent="Container/PlayerInfoContainer/VBoxContainer/WeaponContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/PlayerInfoContainer/VBoxContainer/WeaponContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Container/PlayerInfoContainer/VBoxContainer/WeaponContainer/HBoxContainer"]
 layout_mode = 2
 text = "Pistol"
+horizontal_alignment = 1
+
+[node name="AmmoState" type="Label" parent="Container/PlayerInfoContainer/VBoxContainer/WeaponContainer/HBoxContainer"]
+layout_mode = 2
+text = "0/20"
 horizontal_alignment = 1
 
 [node name="NotifcationTimer" type="Timer" parent="."]

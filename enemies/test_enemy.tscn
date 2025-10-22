@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c36hxv41csxlv"]
+[gd_scene load_steps=4 format=3 uid="uid://c36hxv41csxlv"]
 
 [ext_resource type="PackedScene" uid="uid://cu2gfv6r6dbvq" path="res://levels/NightLevel.tscn" id="1_2bghh"]
 [ext_resource type="PackedScene" uid="uid://bbqtin2aa8fvc" path="res://enemies/slime/enemy_slime.tscn" id="2_8ifd5"]
+[ext_resource type="PackedScene" uid="uid://nluivvs6cv6i" path="res://components/GameWrapper.tscn" id="3_8ifd5"]
 
 [node name="TestEnemy" type="Node2D"]
 
@@ -11,3 +12,7 @@
 position = Vector2(-314, -39)
 speed = 300
 jump_force = 500
+recoil_strength = 200.0
+flash_duration = 0.1
+
+[node name="GameWrapper" parent="." instance=ExtResource("3_8ifd5")]

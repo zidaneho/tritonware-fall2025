@@ -56,10 +56,13 @@ func shoot():
 	var tracer_instance = TracerScene.instantiate()
 	get_tree().root.add_child(tracer_instance)
 	tracer_instance.setup(startPoint, endPoint, bullet_color,5)
+	
+	EventBus.player_ammo_changed.emit(current_ammo,mag_size)
 
 
 func _on_reload_timer_timeout() -> void:
 	current_ammo = mag_size
+	EventBus.player_reloaded.emit(current_ammo,mag_size)
 
 
 func _on_fire_rate_timer_timeout() -> void:
