@@ -14,9 +14,9 @@ var game_data = {
 	"current_level": 1,
 	"music_volume": 0.8,
 	"gametime_day" :1,
-	"gametime_hours":12,
+	"gametime_hours":8,
 	"gametime_minutes":0,
-	"gametime_is_am" : false,
+	"gametime_is_am" : true,
 	"slime_apoc_progress":0,
 }
 
@@ -144,9 +144,9 @@ func load_game():
 	
 	
 	game_data.gametime_day = save_dict.get("gametime_day",1)
-	game_data.gametime_hours = save_dict.get("gametime_hours",0)
+	game_data.gametime_hours = save_dict.get("gametime_hours",8)
 	game_data.gametime_minutes = save_dict.get("gametime_minutes",0)
-	game_data.gametime_is_am = save_dict.get("gametime_is_am",false)
+	game_data.gametime_is_am = save_dict.get("gametime_is_am",true)
 	game_data.slime_apoc_progress = save_dict.get("slime_apoc_progress",0)
 	
 
@@ -170,9 +170,9 @@ func start_new_game():
 		"current_level": 1,
 		"music_volume": game_data.music_volume,
 		"gametime_day" :1,
-		"gametime_hours":12,
+		"gametime_hours":8,
 		"gametime_minutes":0,
-		"gametime_is_am" : false,
+		"gametime_is_am" : true,
 		"slime_apoc_progress":0,
 	}
 	save_game()
