@@ -22,9 +22,11 @@ func _ready() -> void:
 	call_deferred("start_day")
 
 func start_day():
-	hours = start_hour
-	minutes = 0
-	is_am = start_is_am
+	current_day = DataManager.get_game_day()
+	hours = DataManager.get_game_hours()
+	minutes = DataManager.get_game_minutes()
+	is_am = DataManager.get_game_is_am()
+	
 	minute_timer.wait_time = seconds_per_tick
 	minute_timer.one_shot = false
 	minute_timer.start()
@@ -33,11 +35,18 @@ func start_day():
 func _on_tick():
 	_add_minutes(minutes_per_tick)
 	emit_signal("time_changed", hours, minutes, is_am)
+	
+	DataManager.set_time(current_day, hours, minutes, is_am)
 	# End at 4:00 AM
 	if hours == end_hour and is_am and minutes == 0:
 		minute_timer.stop()
 		day_over.emit()
 		current_day += 1
+		hours = start_hour
+		minutes = 0
+		is_am = start_is_am
+		DataManager.set_time_state(current_day, hours, minutes, is_am)
+		DataManager.save_game()
 
 func _add_minutes(delta:int) -> void:
 	minutes += delta

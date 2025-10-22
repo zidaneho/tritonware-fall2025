@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf4l20hcra0uj"]
+
+[ext_resource type="PackedScene" uid="uid://nluivvs6cv6i" path="res://components/GameWrapper.tscn" id="1_n7okp"]
+[ext_resource type="Script" uid="uid://bl5wrowngp78g" path="res://components/Main.gd" id="1_sylyk"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_sylyk")
+
+[node name="GameWrapper" parent="." instance=ExtResource("1_n7okp")]
+
+[node name="LevelContainer" type="Node" parent="."]

@@ -12,6 +12,7 @@ func _ready() -> void:
 	EventBus.player_weapon_changed.connect(on_player_weapon_change)
 	EventBus.player_reloaded.connect(on_player_ammo_change)
 	EventBus.player_ammo_changed.connect(on_player_ammo_change)
+	
 func _on_apoc_meter_manager_apoc_progress_updated(new_progress: int, max_progress: int) -> void:
 	slime_progress.value = new_progress
 	slime_progress.max_value = max_progress

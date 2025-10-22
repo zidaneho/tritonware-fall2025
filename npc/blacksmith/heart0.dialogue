@@ -1,0 +1,8 @@
+~ start0
+: Blacksmith: Welcome to Blobtown! I’m the blacksmith around these parts. Feel free to bring any cash to buy some weapons.
+Blacksmith: Feel free to bring any cash to buy some weapons.
+=> END
+
+~ start1
+: Blacksmith: Trust me. You're gonna be needing them haha.
+=> END

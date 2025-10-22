@@ -12,8 +12,12 @@ var game_data = {
 	"saved_npc_states" : saved_npc_states_default,
 	"player_gold": 0,
 	"current_level": 1,
-	"music_volume": 0.8
-	
+	"music_volume": 0.8,
+	"gametime_day" :1,
+	"gametime_hours":12,
+	"gametime_minutes":0,
+	"gametime_is_am" : false,
+	"slime_apoc_progress":0,
 }
 
 
@@ -63,8 +67,28 @@ func set_heart_level(npc_id : String, level : int):
 		game_data.saved_npc_states[npc_id].heart_level = level
 	else:
 		push_warning("Tried to set state for unknown NPC: %s" % [npc_id])
-		
+func set_time(day: int, hours: int, mins: int, is_am : bool):
+	#assuming the time is actually correct
+	game_data.gametime_day = day
+	game_data.gametime_hours = hours
+	game_data.gametime_minutes = mins
+	game_data.gametime_is_am = is_am
+func get_game_hours():
+	return game_data.gametime_hours
+func get_game_minutes():
+	return game_data.gametime_minutes
+func get_game_is_am():
+	return game_data.gametime_is_am
+func get_game_day():
+	return game_data.gametime_day
+func set_slime_apoc_progress(progress : int):
+	game_data.slime_apoc_progress = progress
+func get_slime_apoc_progress():
+	return game_data.slime_apoc_progress
+
 # --- Save/Load Logic (The core of the manager) ---
+
+
 
 func save_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -117,6 +141,14 @@ func load_game():
 	game_data.current_level = save_dict.get("current_level", 1)
 	game_data.music_volume = save_dict.get("music_volume", 0.8)
 	game_data.saved_npc_states = save_dict.get("saved_npc_states",saved_npc_states_default)
+	
+	
+	game_data.gametime_day = save_dict.get("gametime_day",1)
+	game_data.gametime_hours = save_dict.get("gametime_hours",0)
+	game_data.gametime_minutes = save_dict.get("gametime_minutes",0)
+	game_data.gametime_is_am = save_dict.get("gametime_is_am",false)
+	game_data.slime_apoc_progress = save_dict.get("slime_apoc_progress",0)
+	
 
 	# 2. Convert saved weapon paths back into loaded WeaponData resources
 	game_data.unlocked_weapons.clear()
@@ -129,3 +161,19 @@ func load_game():
 			print("Error loading weapon from path: ", path)
 	
 	print("Game loaded successfully.")
+
+func start_new_game():
+	game_data = {
+		"unlocked_weapons": [] as Array[WeaponData], # This will hold loaded WeaponData resources
+		"saved_npc_states" : saved_npc_states_default,
+		"player_gold": 0,
+		"current_level": 1,
+		"music_volume": game_data.music_volume,
+		"gametime_day" :1,
+		"gametime_hours":12,
+		"gametime_minutes":0,
+		"gametime_is_am" : false,
+		"slime_apoc_progress":0,
+	}
+	save_game()
+	print("Data Manager: Started new game, save file reset to defaults.")
