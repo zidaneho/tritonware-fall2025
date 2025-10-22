@@ -1,7 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjahjjy06ptq4"]
+[gd_scene load_steps=14 format=3 uid="uid://cjahjjy06ptq4"]
 
+[ext_resource type="Texture2D" uid="uid://dmkkqlhmlaovr" path="res://levels/day_level_2.png" id="1_fd2kr"]
 [ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_lobii"]
 [ext_resource type="AudioStream" uid="uid://55o1j73nwxbe" path="res://audio/background/Overworld.wav" id="2_wlhx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd2kr"]
+size = Vector2(1336, 450)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3o4c"]
+size = Vector2(1336, 529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7sb6"]
+size = Vector2(1060, 529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xgmo"]
+size = Vector2(834, 529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpybw"]
+size = Vector2(377, 1472.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04d7c"]
+size = Vector2(377, 2028.125)
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_1vext"]
 
@@ -72,68 +91,516 @@ uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 [node name="CenterSide" type="Node2D" parent="."]
 position = Vector2(0, -3.8146973e-06)
 
-[node name="Ground" type="Polygon2D" parent="CenterSide"]
-position = Vector2(141.09076, 59.84)
-scale = Vector2(27.18182, 1.92)
+[node name="Background" type="Node2D" parent="CenterSide"]
+
+[node name="House_A" type="Sprite2D" parent="CenterSide/Background"]
+position = Vector2(-781.125, -107.125)
+scale = Vector2(0.27593192, 0.26032257)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3173, 8600, 617, 775)
+
+[node name="House_A2" type="Sprite2D" parent="CenterSide/Background"]
+position = Vector2(-312, -104)
+rotation = 3.1415925
+scale = Vector2(0.276, -0.26)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3173, 8600, 617, 775)
+
+[node name="House_A3" type="Sprite2D" parent="CenterSide/Background"]
+position = Vector2(-1312, -176)
+scale = Vector2(0.27593192, 0.26032257)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3173, 8600, 617, 775)
+
+[node name="House_A4" type="Sprite2D" parent="CenterSide/Background"]
+position = Vector2(144.00005, -103.99999)
+rotation = 3.1415925
+scale = Vector2(0.276, -0.26)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3173, 8600, 617, 775)
+
+[node name="House_A5" type="Sprite2D" parent="CenterSide/Background"]
+position = Vector2(952, -136)
+rotation = 3.1415925
+scale = Vector2(0.276, -0.26)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(4280, 8916, 779, 458)
+
+[node name="House_A6" type="Sprite2D" parent="CenterSide/Background"]
+position = Vector2(520, -184)
+scale = Vector2(0.27593192, 0.26032257)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3173, 8600, 617, 775)
+
+[node name="House_A7" type="Sprite2D" parent="CenterSide/Background"]
+position = Vector2(-1720, -592)
+scale = Vector2(0.27593192, 0.26032257)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(5153, 6958, 1691, 2594)
+
+[node name="House_A8" type="Sprite2D" parent="CenterSide/Background"]
+position = Vector2(2096.0002, -744)
+rotation = -0.04145606
+scale = Vector2(0.27593192, 0.26032257)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(5153, 6958, 1691, 2594)
+
+[node name="Ground" type="Node2D" parent="CenterSide"]
+
+[node name="Ground" type="Polygon2D" parent="CenterSide/Ground"]
+position = Vector2(895.9998, 622.336)
+scale = Vector2(26.000002, 19.367998)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 
-[node name="Door-Center" type="Polygon2D" parent="CenterSide"]
-position = Vector2(40.000004, -94.464005)
-scale = Vector2(0.9041739, 1.9680002)
-color = Color(0.6606578, 1.0107458e-06, 0.36120006, 0.4745098)
-polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -29.653809, 48.000004, -72, 48)
-uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
-
-[node name="Building" type="Polygon2D" parent="CenterSide"]
-position = Vector2(-60.26749, -94.464005)
-scale = Vector2(2.2667174, 1.9679999)
-color = Color(0.37424842, 0.09384663, 0.89457214, 0.4745098)
-polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
-uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
-
-[node name="Building2" type="Polygon2D" parent="CenterSide"]
-position = Vector2(215.99998, -95.99999)
-scale = Vector2(2.2667174, 1.9679999)
-color = Color(0.37424842, 0.09384663, 0.89457214, 0.4745098)
-polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
-uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
-
-[node name="Shop1" type="Polygon2D" parent="CenterSide"]
-position = Vector2(-1264, -96)
-scale = Vector2(2.2667174, 1.9679999)
-color = Color(0.101960786, 0.5411765, 0.7294118, 0.4745098)
-polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
-uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
-
-[node name="Mayors House" type="Polygon2D" parent="CenterSide"]
-position = Vector2(1632.0001, -280)
-scale = Vector2(5.490951, 5.3808)
-color = Color(0.37424842, 0.09384663, 0.89457214, 0.4745098)
-polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
-uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
-
-[node name="Ground2" type="Polygon2D" parent="CenterSide"]
-position = Vector2(2272, 40.000008)
-scale = Vector2(24, 1.92)
+[node name="Ground3" type="Polygon2D" parent="CenterSide/Ground"]
+position = Vector2(-1064, 385.0946)
+scale = Vector2(6.2712255, 14.310528)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 
-[node name="Shop2" type="Polygon2D" parent="CenterSide"]
-position = Vector2(-1040, -96)
-scale = Vector2(2.2667174, 1.9679999)
-color = Color(0.101960786, 0.5411765, 0.7294118, 0.4745098)
+[node name="Ground4" type="Polygon2D" parent="CenterSide/Ground"]
+position = Vector2(-1592, 68.80002)
+scale = Vector2(6.2712255, 11.9)
+color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 
-[node name="Shop3" type="Polygon2D" parent="CenterSide"]
-position = Vector2(-815.99994, -96)
-scale = Vector2(2.2667174, 1.9679999)
-color = Color(0.101960786, 0.5411765, 0.7294118, 0.4745098)
+[node name="Ground2" type="Polygon2D" parent="CenterSide/Ground"]
+position = Vector2(1016.00006, -31.999992)
+scale = Vector2(9.454548, 1.6408001)
+color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
 uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground5" type="Polygon2D" parent="CenterSide/Ground"]
+position = Vector2(4262.497, -160)
+scale = Vector2(30.957558, 11.75632)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-77.99379, -23.037416, 16, -32, 16, 48, -72, 48)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Ground6" type="Polygon2D" parent="CenterSide/Ground"]
+position = Vector2(3844.9587, 856.4966)
+scale = Vector2(25.190083, 15.65632)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48, -72, 2.0197678)
+uv = PackedVector2Array(-72, -32, 16, -32, 16, 48, -72, 48)
+
+[node name="Collisions" type="Node2D" parent="CenterSide"]
+
+[node name="Ground" type="StaticBody2D" parent="CenterSide/Collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterSide/Collisions/Ground"]
+position = Vector2(-328, 224)
+shape = SubResource("RectangleShape2D_fd2kr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CenterSide/Collisions/Ground"]
+position = Vector2(-1624, 192)
+shape = SubResource("RectangleShape2D_h3o4c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CenterSide/Collisions/Ground"]
+position = Vector2(-2024, -328)
+shape = SubResource("RectangleShape2D_l7sb6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CenterSide/Collisions/Ground"]
+position = Vector2(751, 184)
+shape = SubResource("RectangleShape2D_5xgmo")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="CenterSide/Collisions/Ground"]
+position = Vector2(1124.5, 743.75)
+shape = SubResource("RectangleShape2D_fpybw")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="CenterSide/Collisions/Ground"]
+position = Vector2(2208, 585.9375)
+shape = SubResource("RectangleShape2D_04d7c")
+
+[node name="Grass" type="Node2D" parent="CenterSide"]
+
+[node name="grass" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-65.81251, 3.8146973e-06)
+scale = Vector2(0.0860584, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass2" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(96.00002, 3.8146973e-06)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass3" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(232, 3.8146973e-06)
+scale = Vector2(0.07189215, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass4" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-208, 3.8146973e-06)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass5" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-352, 3.8146973e-06)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass7" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-659.62494, -2.1249933)
+scale = Vector2(0.0860584, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass8" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-497.8125, -2.1249933)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass9" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-801.8125, -2.1249933)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass10" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-913.81256, -2.1249933)
+scale = Vector2(0.046118338, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass6" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(323.62808, -7.999996)
+scale = Vector2(0.12666048, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3314, 3080, 448, 433)
+
+[node name="grass11" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1179.6249, -74.12499)
+scale = Vector2(0.0860584, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass12" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1017.8125, -74.12499)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass13" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1321.8125, -74.12499)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass14" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1445.8125, -74.12499)
+scale = Vector2(0.058100365, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass15" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1711.9999, -304)
+scale = Vector2(0.0860584, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="rock_a" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1368, -80)
+scale = Vector2(0.0860584, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(5994, 2069, 141, 67)
+
+[node name="rock_a2" type="Sprite2D" parent="CenterSide/Grass/rock_a"]
+position = Vector2(278.87988, 64.28827)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(5994, 2069, 141, 67)
+
+[node name="rock_a3" type="Sprite2D" parent="CenterSide/Grass/rock_a"]
+position = Vector2(92.95996, 64.28827)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(5994, 2069, 141, 67)
+
+[node name="grass16" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1553.8125, -306.125)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass17" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1857.8125, -306.125)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass18" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1969.8125, -306.125)
+scale = Vector2(0.046118338, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="Node2D" type="Node2D" parent="CenterSide/Grass"]
+
+[node name="rock_a2" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(-1136, -79.999985)
+rotation = 0.1753228
+scale = Vector2(-0.073941596, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(5994, 2069, 141, 67)
+
+[node name="rock_a2" type="Sprite2D" parent="CenterSide/Grass/rock_a2"]
+position = Vector2(278.87988, 64.28827)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(5994, 2069, 141, 67)
+
+[node name="rock_a3" type="Sprite2D" parent="CenterSide/Grass/rock_a2"]
+position = Vector2(92.95996, 64.28827)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(5994, 2069, 141, 67)
+
+[node name="rock_a3" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(192.00002, -7.999996)
+rotation = -0.16698839
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(5994, 2069, 141, 67)
+
+[node name="grass19" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(540.37494, -82.125)
+scale = Vector2(0.0860584, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass20" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(702.1875, -82.125)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass21" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(838.18744, -82.125)
+scale = Vector2(0.07189215, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass22" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(398.1875, -82.125)
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass23" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(976, -80)
+scale = Vector2(0.07189215, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass24" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(1104, -80)
+scale = Vector2(0.07189215, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass25" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(1240, 0)
+scale = Vector2(0.08786819, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass26" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(1919.1514, -441.43738)
+rotation = -0.10180845
+scale = Vector2(0.0860584, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass27" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(2071.9998, -447.99997)
+rotation = -0.10180845
+scale = Vector2(0.07807038, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass28" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(2208, -456.00003)
+rotation = -0.10180845
+scale = Vector2(0.07189215, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass29" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(2343.9998, -455.99997)
+rotation = -0.10180845
+scale = Vector2(0.07189215, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="grass30" type="Sprite2D" parent="CenterSide/Grass"]
+position = Vector2(2471.9998, -455.99997)
+rotation = -0.10180845
+scale = Vector2(0.07189215, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(3603, 2373, 2003, 223)
+
+[node name="Flowers" type="Node2D" parent="CenterSide"]
+
+[node name="flower" type="Sprite2D" parent="CenterSide/Flowers"]
+position = Vector2(-1616, -328)
+scale = Vector2(0.21903402, 0.124439485)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7114, 9028, 295, 350)
+
+[node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower"]
+position = Vector2(126.667786, 161.30383)
+scale = Vector2(0.7362099, 0.6644914)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7724, 9074, 152, 292)
+
+[node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower"]
+position = Vector2(-146.09613, 128.5766)
+scale = Vector2(0.758217, 1.076496)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(8195, 9024, 239, 260)
+
+[node name="flower2" type="Sprite2D" parent="CenterSide/Flowers"]
+position = Vector2(-1720.0001, -320)
+scale = Vector2(0.09906509, 0.06715704)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7114, 9028, 295, 350)
+
+[node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower2"]
+position = Vector2(126.667786, 161.30383)
+scale = Vector2(0.7362099, 0.6644914)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7724, 9074, 152, 292)
+
+[node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower2"]
+position = Vector2(-146.09613, 128.5766)
+scale = Vector2(0.758217, 1.076496)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(8195, 9024, 239, 260)
+
+[node name="flower3" type="Sprite2D" parent="CenterSide/Flowers"]
+position = Vector2(-1783.9999, -320.00003)
+scale = Vector2(-0.1102674, 0.06935968)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7114, 9028, 295, 350)
+
+[node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower3"]
+position = Vector2(126.667786, 161.30383)
+scale = Vector2(0.7362099, 0.6644914)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7724, 9074, 152, 292)
+
+[node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower3"]
+position = Vector2(-146.09613, 128.5766)
+scale = Vector2(0.758217, 1.076496)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(8195, 9024, 239, 260)
+
+[node name="flower4" type="Sprite2D" parent="CenterSide/Flowers"]
+position = Vector2(-1840, -328.00003)
+scale = Vector2(-0.15424009, 0.10464835)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7114, 9028, 295, 350)
+
+[node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower4"]
+position = Vector2(126.667786, 161.30383)
+scale = Vector2(0.7362099, 0.6644914)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7724, 9074, 152, 292)
+
+[node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower4"]
+position = Vector2(-146.09613, 128.5766)
+scale = Vector2(0.758217, 1.076496)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(8195, 9024, 239, 260)
+
+[node name="flower5" type="Sprite2D" parent="CenterSide/Flowers"]
+position = Vector2(-856, -23.999996)
+scale = Vector2(0.14579648, 0.088199)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7114, 9028, 295, 350)
+
+[node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower5"]
+position = Vector2(126.667786, 161.30383)
+scale = Vector2(0.7362099, 0.6644914)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(7724, 9074, 152, 292)
+
+[node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower5"]
+position = Vector2(-146.09613, 128.5766)
+scale = Vector2(0.758217, 1.076496)
+texture = ExtResource("1_fd2kr")
+region_enabled = true
+region_rect = Rect2(8195, 9024, 239, 260)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1vext")
@@ -141,6 +608,7 @@ camera_attributes = SubResource("CameraAttributesPractical_lobii")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 rotation = 1.6485332
+blend_mode = 2
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_lobii")]
