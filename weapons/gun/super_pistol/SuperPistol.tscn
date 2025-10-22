@@ -1,34 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://b0kruaeunlbq0"]
 
 [ext_resource type="Texture2D" uid="uid://ddff1t8p46oeq" path="res://weapons/gun/super_pistol/3Pistol03.png" id="1_gkhtl"]
+[ext_resource type="Script" uid="uid://bsh1efaxetkw7" path="res://weapons/gun/pistol/pistol.gd" id="1_ptf4q"]
 [ext_resource type="Texture2D" uid="uid://cvqss1f7dmna" path="res://weapons/gun/utils/muzzleFlare.png" id="2_ptf4q"]
-
-[sub_resource type="GDScript" id="GDScript_iev10"]
-script/source = "extends Gun
-
-@export var muzzlePosition : Marker2D
-@export var muzzleParticle : GPUParticles2D
-const TracerScene = preload('res://weapons/gun/utils/tracer.tscn')
-
-
-func shoot():
-	if muzzleParticle.emitting:
-		muzzleParticle.restart()
-	else:
-		muzzleParticle.emitting = true
-		muzzleParticle.restart()
-		
-	var startPoint = muzzlePosition.global_position
-	var endPoint = startPoint + (get_global_mouse_position() - muzzlePosition.global_position).normalized() * self.range
-	var space_state = get_world_2d().direct_space_state
-	# use global coordinates, not local to node
-	var query = PhysicsRayQueryParameters2D.create(startPoint,endPoint)
-	var result = space_state.intersect_ray(query)
-	
-	var tracer_instance = TracerScene.instantiate()
-	get_tree().root.add_child(tracer_instance)
-	tracer_instance.setup(startPoint, endPoint, bullet_color,5)
-"
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_16sjl"]
 blend_mode = 1
@@ -63,12 +37,13 @@ color_ramp = SubResource("GradientTexture1D_5fxbl")
 anim_offset_max = 1.0
 
 [node name="SuperPistol" type="Node2D" node_paths=PackedStringArray("muzzlePosition", "muzzleParticle")]
-script = SubResource("GDScript_iev10")
+script = ExtResource("1_ptf4q")
 muzzlePosition = NodePath("Muzzle")
 muzzleParticle = NodePath("Muzzle/MuzzleParticle")
+damage = 1
 fire_rate = 5.0
 mag_size = 20
-range = 1500.0
+range = 500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.7620292, 0, 0.20177156, 1)
@@ -90,3 +65,7 @@ lifetime = 0.4
 one_shot = true
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_sy7wo")
+
+[node name="ReloadTimer" type="Timer" parent="."]
+
+[node name="FireRateTimer" type="Timer" parent="."]

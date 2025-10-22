@@ -40,6 +40,8 @@ anim_offset_max = 1.0
 script = ExtResource("1_yloip")
 muzzlePosition = NodePath("Muzzle")
 muzzleParticle = NodePath("Muzzle/MuzzleParticle")
+damage = 1
+fire_rate = 0.5
 range = 500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -56,7 +58,11 @@ position = Vector2(1464, -43)
 emitting = false
 amount = 1
 texture = ExtResource("3_16sjl")
-lifetime = 0.4
+lifetime = 0.09999999999999999
 one_shot = true
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_sy7wo")
+
+[node name="ReloadTimer" type="Timer" parent="."]
+
+[node name="FireRateTimer" type="Timer" parent="."]

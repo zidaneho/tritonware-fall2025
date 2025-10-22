@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0b3gxad13a7q"]
+[gd_scene load_steps=4 format=3 uid="uid://c0b3gxad13a7q"]
 
 [ext_resource type="PackedScene" uid="uid://db6jv8kwyglrf" path="res://npc/npc1/NPC1.tscn" id="1_87cl4"]
+[ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="2_1o87m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijqid"]
+size = Vector2(10400, 2572)
 
 [node name="TestNpc" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Npc1" parent="." instance=ExtResource("1_87cl4")]
+loop_titles = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-390, 1276)
+shape = SubResource("RectangleShape2D_ijqid")
+
+[node name="Player" parent="." instance=ExtResource("2_1o87m")]
+position = Vector2(-697, -132)

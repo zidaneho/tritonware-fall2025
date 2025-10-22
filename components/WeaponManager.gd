@@ -2,6 +2,7 @@ extends Node2D
 
 var unlocked_weapons : Array[WeaponData]
 
+
 @export var starting_weapon : WeaponData
 @export var right_hand_pivot : Node2D  # The node that will rotate
 @export var right_hand_weapon : Node2D # The attachment point for the weapon scene
@@ -50,6 +51,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("fire") and current_weapon_instance:
 		if current_weapon_instance.has_method("shoot"):
+			
 			current_weapon_instance.shoot()
 	
 	if right_hand_pivot:

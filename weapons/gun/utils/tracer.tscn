@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cnthxhv0vr13m" path="res://weapons/gun/utils/tracer.gd" id="1_53uud"]
 
 [sub_resource type="Gradient" id="Gradient_53uud"]
-offsets = PackedFloat32Array(0, 0.8835617, 0.9794521)
-colors = PackedColorArray(0, 0, 0, 0, 0.9019608, 0.9019608, 0.9019608, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.88013697, 0.9794521)
+colors = PackedColorArray(0, 0, 0, 0, 0.9019608, 0.9019608, 0.9019608, 0, 1, 1, 1, 1)
 
 [node name="Tracer" type="Line2D"]
 width = 2.0

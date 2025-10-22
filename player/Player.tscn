@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bdy31fl3mxlr5"]
+[gd_scene load_steps=34 format=3 uid="uid://bdy31fl3mxlr5"]
 
 [ext_resource type="Texture2D" uid="uid://b6m68cdjfiou3" path="res://player/art/tail_1.png" id="1_mhpjh"]
 [ext_resource type="Script" uid="uid://d0mlgtxma1xmk" path="res://player/player.gd" id="1_ndjxb"]
@@ -313,6 +313,9 @@ random_pitch = 1.3
 streams_count = 1
 stream_0/stream = ExtResource("24_8nth8")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8nth8"]
+radius = 65.0
+
 [node name="Player" type="CharacterBody2D" groups=["players"]]
 collision_layer = 2
 script = ExtResource("1_ndjxb")
@@ -399,4 +402,14 @@ stream = SubResource("AudioStreamRandomizer_u8vxv")
 [node name="DashAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_8tqfn")
 
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -23)
+shape = SubResource("CircleShape2D_8nth8")
+
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]

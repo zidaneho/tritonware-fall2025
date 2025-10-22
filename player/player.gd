@@ -20,6 +20,25 @@ var is_in_knockback := false
 var knockback_decay := 2400.0        # higher = quicker decay
 var max_knockback_speed := 1400.0
 
+var npc_instances = {}
+var in_dialogue : bool = false
+
+
+func _ready() -> void:
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+
+func _process(_delta: float) -> void:
+	if not in_dialogue and not npc_instances.is_empty() and Input.is_action_just_pressed("interact"):
+		var closest_dist = INF
+		var closest_npc = null
+		for npc_instance in npc_instances.values():
+			if npc_instance.global_position.distance_to(global_position) < closest_dist:
+				closest_npc = npc_instance
+		if closest_npc:
+			closest_npc.interact(self)
+		
+
 # runs every frame, for physics
 func _physics_process(delta):
 	
@@ -80,3 +99,15 @@ func take_damage(damage, attacker_position):
 
 func _on_invincibility_timer_timeout() -> void:
 	is_invincible = false
+
+
+func _on_interact_area_body_entered(body: Node2D) -> void:
+	if body.has_method("interact"):
+		npc_instances.set(body.name,body)
+func _on_interact_area_body_exited(body: Node2D) -> void:
+	if npc_instances.has(body.name):
+		npc_instances.erase(body.name)
+func _on_dialogue_started(_resource : DialogueResource):
+	in_dialogue = true
+func _on_dialogue_ended(_resource : DialogueResource):
+	in_dialogue = false
