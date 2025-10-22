@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjahjjy06ptq4"]
 
 [ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_lobii"]
-[ext_resource type="AudioStream" uid="uid://bb8emvs4x2fy6" path="res://audio/background/Overworld.wav" id="2_wlhx5"]
+[ext_resource type="AudioStream" uid="uid://55o1j73nwxbe" path="res://audio/background/Overworld.wav" id="2_wlhx5"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_1vext"]
 
