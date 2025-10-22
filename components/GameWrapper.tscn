@@ -13,6 +13,7 @@
 [node name="SlimeOverloadManager" type="Node2D" parent="."]
 script = ExtResource("2_5nqnt")
 
+[connection signal="day_over" from="TimeManager" to="GameUi" method="_on_time_manager_day_over"]
 [connection signal="day_over" from="TimeManager" to="SlimeOverloadManager" method="_on_time_manager_day_over"]
 [connection signal="time_changed" from="TimeManager" to="GameUi" method="_on_time_changed"]
 [connection signal="apoc_progress_updated" from="SlimeOverloadManager" to="GameUi" method="_on_apoc_meter_manager_apoc_progress_updated"]

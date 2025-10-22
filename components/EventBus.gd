@@ -13,3 +13,5 @@ signal player_weapon_changed(new_weapon : WeaponData, ammo : int, maxAmmo : int)
 signal player_ammo_changed(new_ammo : int, max_ammo : int)
 
 signal player_reloaded(new_ammo : int, max_ammo : int)
+
+signal slime_killed()

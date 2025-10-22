@@ -7,6 +7,7 @@ const SAVE_PATH = "user://game.save"
 const saved_npc_states_default = {
 	"npc1":{"heart_level":0,"is_alive":true},
 }
+var _last_day_slimes_killed = 0
 var game_data = {
 	"unlocked_weapons": [] as Array[WeaponData], # This will hold loaded WeaponData resources
 	"saved_npc_states" : saved_npc_states_default,
@@ -85,7 +86,11 @@ func set_slime_apoc_progress(progress : int):
 	game_data.slime_apoc_progress = progress
 func get_slime_apoc_progress():
 	return game_data.slime_apoc_progress
+func set_last_day_stats(slimes_killed: int):
+	_last_day_slimes_killed = slimes_killed
 
+func get_last_day_slimes_killed() -> int:
+	return _last_day_slimes_killed
 # --- Save/Load Logic (The core of the manager) ---
 
 

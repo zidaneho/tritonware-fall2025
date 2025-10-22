@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://v5ad364a4fk3"]
+
+[ext_resource type="Script" uid="uid://dbql48y8ag5ml" path="res://enemies/slime/SlimeSpawner.gd" id="1_tqb3w"]
+[ext_resource type="PackedScene" uid="uid://bbqtin2aa8fvc" path="res://enemies/slime/enemy_slime.tscn" id="2_h8u57"]
+
+[node name="SlimeSpawner" type="Node2D"]
+script = ExtResource("1_tqb3w")
+slime_scene = ExtResource("2_h8u57")
+
+[node name="SpawnTimer" type="Timer" parent="."]

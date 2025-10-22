@@ -17,6 +17,8 @@ radius = 21.0
 [node name="EnemySlime" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_opsid")
+speed = 200
+jump_force = 400
 jump_delay_time = 1.0
 jump_air_delay_time = 1.0
 

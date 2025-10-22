@@ -43,4 +43,6 @@ func change_level(scene_path: String) -> void:
 func _on_night_ended() -> void:
 	# The TimeManager just told us the night is over.
 	# Go back to the day level.
-	change_level("res://levels/DayLevel.tscn")
+	var transition_scene = load("res://components/DayTransition.tscn").instantiate()
+	get_tree().get_root().add_child(transition_scene)
+	

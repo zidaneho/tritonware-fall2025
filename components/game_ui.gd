@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var curr_weapon_label = $Container/PlayerInfoContainer/VBoxContainer/WeaponContainer/HBoxContainer/Label
 @onready var curr_weapon_icon = $Container/PlayerInfoContainer/VBoxContainer/WeaponContainer/ItemContainer/TextureRect
 @onready var curr_weapon_ammostate = $Container/PlayerInfoContainer/VBoxContainer/WeaponContainer/HBoxContainer/AmmoState
+@onready var day_label = $Container/GameInfoContainer/VBoxContainer/DayLabel
 func _ready() -> void:
 	EventBus.player_took_damage.connect(update_health_bar)
 	EventBus.player_weapon_changed.connect(on_player_weapon_change)
@@ -52,3 +53,8 @@ func on_player_ammo_change(ammo,maxAmmo):
 		curr_weapon_ammostate.text = str(ammo) + " / " + str(maxAmmo)
 	else:
 		curr_weapon_ammostate.text = "Reloading..."
+
+
+func _on_time_manager_day_over() -> void:
+	day_label.text = "Day " + str(DataManager.get_game_day())
+	

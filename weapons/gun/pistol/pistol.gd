@@ -52,7 +52,7 @@ func shoot():
 	var result = space_state.intersect_ray(query)
 	if result and result.collider.has_method("take_damage"):
 		result.collider.take_damage(damage,global_position)
-	
+		endPoint = result.position
 	var tracer_instance = TracerScene.instantiate()
 	get_tree().root.add_child(tracer_instance)
 	tracer_instance.setup(startPoint, endPoint, bullet_color,5)

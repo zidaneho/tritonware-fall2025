@@ -1,7 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://cu2gfv6r6dbvq"]
+[gd_scene load_steps=31 format=3 uid="uid://cu2gfv6r6dbvq"]
 
 [ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_h0kpy"]
+[ext_resource type="Texture2D" uid="uid://dthldkwyov8rr" path="res://levels/night_level1.png" id="1_sx6eq"]
 [ext_resource type="AudioStream" uid="uid://doeqm6q1ay7n6" path="res://audio/background/Combat (no intro).wav" id="2_hhu4n"]
+[ext_resource type="PackedScene" uid="uid://v5ad364a4fk3" path="res://enemies/slime/SlimeSpawner.tscn" id="3_7dmf5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0kpy"]
 size = Vector2(1304, 544)
@@ -430,6 +432,485 @@ shape = SubResource("RectangleShape2D_u6cdb")
 position = Vector2(2544, 68)
 shape = SubResource("RectangleShape2D_u6cdb")
 
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Rock" type="Sprite2D" parent="Foreground"]
+position = Vector2(-3888, 167.99998)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock2" type="Sprite2D" parent="Foreground"]
+position = Vector2(-4024, 167.99998)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock2"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock2"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock3" type="Sprite2D" parent="Foreground"]
+position = Vector2(-4168, 167.99998)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock3"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock3"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock4" type="Sprite2D" parent="Foreground"]
+position = Vector2(-4320, 167.99998)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock4"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock4"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock5" type="Sprite2D" parent="Foreground"]
+position = Vector2(-3306.2, 168.46074)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock5"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock5"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock6" type="Sprite2D" parent="Foreground"]
+position = Vector2(-3442.1997, 168.46072)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock6"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock6"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock7" type="Sprite2D" parent="Foreground"]
+position = Vector2(-3586.1997, 168.46072)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock7"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock7"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock8" type="Sprite2D" parent="Foreground"]
+position = Vector2(-3738.1997, 168.46072)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock8"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock8"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock9" type="Sprite2D" parent="Foreground"]
+position = Vector2(-4442.2, 171.46074)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock9"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock9"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock10" type="Sprite2D" parent="Foreground"]
+position = Vector2(-4576, 176)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock10"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock10"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock11" type="Sprite2D" parent="Foreground"]
+position = Vector2(-4728, 167.99998)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock11"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock12" type="Sprite2D" parent="Foreground"]
+position = Vector2(-2354.2002, 207.46074)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock12"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock12"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock13" type="Sprite2D" parent="Foreground"]
+position = Vector2(-2490.2, 207.46072)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock13"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock13"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock14" type="Sprite2D" parent="Foreground"]
+position = Vector2(-2634.2, 207.46072)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock14"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock14"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock15" type="Sprite2D" parent="Foreground"]
+position = Vector2(-2786.2, 207.46072)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock15"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock15"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock16" type="Sprite2D" parent="Foreground"]
+position = Vector2(-1706.55, 207.99998)
+scale = Vector2(0.059745017, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock16"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock16"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock17" type="Sprite2D" parent="Foreground"]
+position = Vector2(-1901.0999, 207.92146)
+scale = Vector2(0.06234691, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock17"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock17"]
+position = Vector2(315.0398, -62.335495)
+rotation = 3.1415925
+scale = Vector2(1.4359666, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock18" type="Sprite2D" parent="Foreground"]
+position = Vector2(-2052.3997, 207.92146)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock18"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock18"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock19" type="Sprite2D" parent="Foreground"]
+position = Vector2(-2204.3997, 207.92146)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock19"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock19"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock20" type="Sprite2D" parent="Foreground"]
+position = Vector2(-2906.2002, 165.46074)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock20"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock20"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock21" type="Sprite2D" parent="Foreground"]
+position = Vector2(-3042.2, 165.46072)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock21"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock21"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock22" type="Sprite2D" parent="Foreground"]
+position = Vector2(-3186.2, 165.46072)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock22"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock22"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="Rock23" type="Sprite2D" parent="Foreground"]
+position = Vector2(-3338.2, 165.46072)
+scale = Vector2(0.054898094, 0.045204945)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel1" type="Sprite2D" parent="Foreground/Rock23"]
+position = Vector2(-922.34375, 0)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
+[node name="NightLevel3" type="Sprite2D" parent="Foreground/Rock23"]
+position = Vector2(0.015625, -62.33545)
+rotation = 3.1415925
+scale = Vector2(1.1145134, -0.9973573)
+texture = ExtResource("1_sx6eq")
+region_enabled = true
+region_rect = Rect2(3082, 3440, 1960, 861)
+
 [node name="Player" parent="." instance=ExtResource("1_h0kpy")]
 position = Vector2(-8, -16)
 
@@ -440,3 +921,15 @@ camera_attributes = SubResource("CameraAttributesPractical_7dmf5")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_hhu4n")
 autoplay = true
+
+[node name="SlimeSpawner" parent="." instance=ExtResource("3_7dmf5")]
+position = Vector2(3200, -39)
+
+[node name="SlimeSpawner2" parent="." instance=ExtResource("3_7dmf5")]
+position = Vector2(4744, -48)
+
+[node name="SlimeSpawner3" parent="." instance=ExtResource("3_7dmf5")]
+position = Vector2(-4488, 112)
+
+[node name="SlimeSpawner4" parent="." instance=ExtResource("3_7dmf5")]
+position = Vector2(-2160, 152)

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died(slime: CharacterBody2D)
+
 @export var health = 5
 @export var speed = 3
 @export var jump_force = 24
@@ -17,6 +19,9 @@ extends CharacterBody2D
 @onready var jump_air_delay_timer = $JumpAirDelayTimer
 @onready var detection_area = $DetectionArea
 @onready var flash_timer = $FlashTimer
+@onready var sprites = $Sprites # <--- ADD THIS
+@onready var collision_shape = $CollisionShape2D # <--- ADD THIS
+@onready var detection_shape = $DetectionArea/CollisionShape2D
 
 enum SlimeStates {
 	IDLE,
@@ -37,12 +42,9 @@ var sprite_dictionary = {
 }
 var current_sprite : Sprite2D
 var jump_direction : float
+var base_color : Color = Color.WHITE
 
 func _ready() -> void:
-	var players = get_tree().get_nodes_in_group("players")
-	if players.size() > 0:
-		player = players[0]
-		
 	detection_area.connect("body_entered", Callable(self, "_on_body_entered"))
 	
 	flash_timer.one_shot = true
@@ -56,7 +58,8 @@ func _process(_delta: float) -> void:
 	if not is_dead and health <= 0:
 		state = SlimeStates.DEATH
 		is_dead = true
-		get_tree().create_timer(0.3).timeout.connect(queue_free)
+		EventBus.slime_killed.emit()
+		get_tree().create_timer(0.3).timeout.connect(return_to_pool)
 	
 	match state:
 		SlimeStates.IDLE:
@@ -134,7 +137,7 @@ func play_sprite(key, flip_to_player = true):
 	current_sprite = sprite
 	
 	if flash_timer.is_stopped():
-		current_sprite.modulate = Color.WHITE
+		current_sprite.modulate = base_color
 	
 	if flip_to_player and player and state != SlimeStates.DEATH:
 		var direction = player.global_position - global_position
@@ -156,4 +159,38 @@ func take_damage(damage_amount, attacker_pos):
 
 func _on_flash_timer_timeout():
 	if current_sprite:
-		current_sprite.modulate = Color.WHITE
+		current_sprite.modulate = base_color
+func spawn_at(spawn_position: Vector2, new_player: CharacterBody2D):
+	# Reset state
+	global_position = spawn_position
+	velocity = Vector2.ZERO
+	health = 5 # Or whatever the starting health should be
+	is_dead = false
+	state = SlimeStates.IDLE
+	player = new_player
+	
+	# Reset timers
+	jump_cooldown_timer.start(jump_cooldown)
+	
+	# Enable node
+	show()
+	set_process(true)
+	set_physics_process(true)
+	collision_shape.disabled = false
+	detection_shape.disabled = false
+	
+	# Set a default color
+	set_color(Color.WHITE)
+func set_color(color: Color):
+	base_color = color
+	sprites.modulate = base_color
+func return_to_pool():
+	# Disable and hide
+	hide()
+	set_process(false)
+	set_physics_process(false)
+	collision_shape.disabled = true
+	detection_shape.disabled = true
+	
+	# Emit signal to spawner
+	emit_signal("died", self)
