@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjahjjy06ptq4"]
+[gd_scene load_steps=17 format=3 uid="uid://cjahjjy06ptq4"]
 
 [ext_resource type="Texture2D" uid="uid://dmkkqlhmlaovr" path="res://levels/day_level_2.png" id="1_fd2kr"]
 [ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_lobii"]
-[ext_resource type="Script" uid="uid://dipujktovs3sq" path="res://levels/night_level_transition.gd" id="2_h3o4c"]
+[ext_resource type="Script" path="res://levels/night_level_transition.gd" id="2_h3o4c"]
+[ext_resource type="Texture2D" uid="uid://btofg70axxjh2" path="res://levels/Slime_Sign.png" id="2_l7sb6"]
 [ext_resource type="AudioStream" uid="uid://55o1j73nwxbe" path="res://audio/background/Overworld.wav" id="2_wlhx5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fd2kr"]
@@ -554,6 +555,11 @@ texture = ExtResource("1_fd2kr")
 region_enabled = true
 region_rect = Rect2(8195, 9024, 239, 260)
 
+[node name="SlimeSign" type="Sprite2D" parent="CenterSide"]
+position = Vector2(1290, -33.999996)
+scale = Vector2(0.05940991, 0.04971057)
+texture = ExtResource("2_l7sb6")
+
 [node name="NightLevelTransition" type="Area2D" parent="CenterSide"]
 position = Vector2(1704, 832)
 collision_mask = 2
@@ -576,6 +582,7 @@ shadow_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wlhx5")
+volume_db = -2.524
 autoplay = true
 
 [connection signal="body_entered" from="CenterSide/NightLevelTransition" to="CenterSide/NightLevelTransition" method="_on_body_entered"]
