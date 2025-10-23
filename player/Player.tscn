@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bdy31fl3mxlr5"]
+[gd_scene load_steps=32 format=3 uid="uid://bdy31fl3mxlr5"]
 
 [ext_resource type="Texture2D" uid="uid://b6m68cdjfiou3" path="res://player/art/tail_1.png" id="1_mhpjh"]
 [ext_resource type="Script" uid="uid://d0mlgtxma1xmk" path="res://player/player.gd" id="1_ndjxb"]
@@ -11,9 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dh608m8wgrkab" path="res://player/art/eyes_highlight.png" id="8_t8epa"]
 [ext_resource type="Texture2D" uid="uid://b3tmgnmdc7x5s" path="res://player/art/eyes_pupils.png" id="9_w24id"]
 [ext_resource type="Script" uid="uid://cw4orb3ndf8mr" path="res://components/WeaponManager.gd" id="11_b32pr"]
-[ext_resource type="Resource" uid="uid://drxrmt4ahnmgq" path="res://weapons/gun/super_pistol/super_pistol.tres" id="12_b32pr"]
 [ext_resource type="Resource" uid="uid://b25ortncxi5ps" path="res://weapons/gun/pistol/pistol.tres" id="12_hbkom"]
-[ext_resource type="Script" uid="uid://dai2x6s8ti0bg" path="res://weapons/WeaponData.gd" id="13_d4g0h"]
 [ext_resource type="AudioStream" uid="uid://b35kiysfc76ec" path="res://audio/player/footsteps-grass/SFX_EQUIPED - FootstepGrassv1.wav" id="15_2m0d2"]
 [ext_resource type="AudioStream" uid="uid://ce6pinfknnmxg" path="res://audio/player/footsteps-grass/SFX_EQUIPED - FootstepGrassv2.wav" id="16_8nth8"]
 [ext_resource type="AudioStream" uid="uid://dwhthpqfbqc55" path="res://audio/player/footsteps-grass/SFX_EQUIPED - FootstepGrassv3.wav" id="17_8tqfn"]
@@ -386,12 +384,11 @@ libraries = {
 
 [node name="WeaponManager" type="Node2D" parent="." node_paths=PackedStringArray("right_hand_pivot", "right_hand_weapon", "right_hand")]
 script = ExtResource("11_b32pr")
-starting_weapon = ExtResource("12_b32pr")
+starting_weapon = ExtResource("12_hbkom")
 right_hand_pivot = NodePath("../Sprites/Right_Hand_Weapon_Pivot")
 right_hand_weapon = NodePath("../Sprites/Right_Hand_Weapon_Pivot/Weapon_Pivot")
 right_hand = NodePath("../Sprites/Right_Hand")
 start_unarmed = true
-test_weapons = Array[ExtResource("13_d4g0h")]([ExtResource("12_hbkom"), ExtResource("12_b32pr")])
 
 [node name="DirtFootstepAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_234y4")

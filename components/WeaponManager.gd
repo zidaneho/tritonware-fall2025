@@ -103,7 +103,43 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		equip_weapon(current_weapon_index)
 	
+# Call this from your button press or pickup logic
+func add_and_instantiate_weapon(new_weapon_data: WeaponData):
+	if new_weapon_data == null:
+		print("ERROR: Tried to add a null weapon.")
+		return
 
+	# 1. Check if we already have it (using DataManager's list)
+	var current_unlocked = DataManager.get_unlocked_weapons() #
+	if current_unlocked.has(new_weapon_data):
+		print("Weapon already unlocked: ", new_weapon_data.weapon_name) #
+		return
+
+	# 2. Add to DataManager (updates save file)
+	DataManager.add_weapon(new_weapon_data) #
+
+	# 3. Refresh our local list
+	unlocked_weapons = DataManager.get_unlocked_weapons() #
+
+	# 4. Find the index of the newly added weapon
+	var new_weapon_index = unlocked_weapons.find(new_weapon_data)
+	if new_weapon_index == -1:
+		print("ERROR: Could not find newly added weapon in DataManager list!")
+		return
+
+	# 5. Instantiate and add to our pool
+	if new_weapon_data.scene != null: #
+		var new_instance = new_weapon_data.scene.instantiate() #
+		weapon_instances[new_weapon_index] = new_instance #
+		if right_hand_weapon: #
+			right_hand_weapon.add_child(new_instance) #
+			new_instance.visible = false #
+			new_instance.process_mode = Node.PROCESS_MODE_DISABLED #
+			print("Instantiated new weapon: ", new_weapon_data.weapon_name) #
+		else:
+			print("ERROR: 'right_hand_weapon' node is null. Cannot add instance.") #
+	else:
+		print("Warning: Weapon '%s' has no scene to instantiate." % new_weapon_data.weapon_name) #
 func equip_weapon(index: int) -> void:
 	# --- 1. Deactivate the OLD weapon ---
 	if is_instance_valid(current_weapon_instance):

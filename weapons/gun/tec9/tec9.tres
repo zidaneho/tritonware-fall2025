@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3 uid="uid://fhpsflt87rn1"]
+
+[ext_resource type="Texture2D" uid="uid://bpv7rptfuehmt" path="res://weapons/gun/tec9/tec9.png" id="1_588rg"]
+[ext_resource type="PackedScene" uid="uid://b1t1i75ao4n8y" path="res://weapons/gun/tec9/Tec9.tscn" id="2_tdewk"]
+[ext_resource type="Script" uid="uid://dai2x6s8ti0bg" path="res://weapons/WeaponData.gd" id="3_sje8t"]
+
+[resource]
+script = ExtResource("3_sje8t")
+weapon_name = "Tec-9"
+weapon_type = 1
+icon = ExtResource("1_588rg")
+scene = ExtResource("2_tdewk")
+metadata/_custom_type_script = "uid://dai2x6s8ti0bg"

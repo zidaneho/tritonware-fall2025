@@ -1,16 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://cjahjjy06ptq4"]
+[gd_scene load_steps=16 format=3 uid="uid://bki2ljfys3vej"]
 
-[ext_resource type="Script" uid="uid://dix8ylxu7s3of" path="res://levels/DayLevel.gd" id="1_5xgmo"]
-[ext_resource type="Texture2D" uid="uid://dmkkqlhmlaovr" path="res://levels/day_level_2.png" id="1_fd2kr"]
-[ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_lobii"]
-[ext_resource type="Script" uid="uid://dipujktovs3sq" path="res://levels/night_level_transition.gd" id="2_h3o4c"]
-[ext_resource type="Texture2D" uid="uid://btofg70axxjh2" path="res://levels/Slime_Sign.png" id="2_l7sb6"]
-[ext_resource type="AudioStream" uid="uid://55o1j73nwxbe" path="res://audio/background/Overworld.wav" id="2_wlhx5"]
-[ext_resource type="PackedScene" uid="uid://xnsjyisyywjg" path="res://npc/blacksmith/Blacksmith.tscn" id="5_e6u0x"]
-[ext_resource type="PackedScene" uid="uid://bh2muf2j4flyx" path="res://npc/nerd/Nerd.tscn" id="6_kj6hl"]
-[ext_resource type="PackedScene" uid="uid://dmexe0cqtdjb8" path="res://npc/alcoholic/Alcoholic.tscn" id="7_60ktq"]
-[ext_resource type="PackedScene" uid="uid://dvuwwu0hi5gkt" path="res://npc/chef/Chef.tscn" id="8_kj6hl"]
-[ext_resource type="PackedScene" uid="uid://wr0yg7c138ee" path="res://npc/trash/Trash.tscn" id="9_60ktq"]
+[ext_resource type="Texture2D" uid="uid://dmkkqlhmlaovr" path="res://levels/day_level_2.png" id="2_x8c5t"]
+[ext_resource type="Texture2D" uid="uid://btofg70axxjh2" path="res://levels/Slime_Sign.png" id="3_52232"]
+[ext_resource type="Script" uid="uid://dipujktovs3sq" path="res://levels/night_level_transition.gd" id="4_gs5w2"]
+[ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="10_287oh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fd2kr"]
 size = Vector2(1336, 450)
@@ -45,9 +38,7 @@ sky = SubResource("Sky_lobii")
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_lobii"]
 
-[node name="DayLevel" type="Node2D" node_paths=PackedStringArray("npcs")]
-script = ExtResource("1_5xgmo")
-npcs = [NodePath("CenterSide/NPCS/Alcoholic"), NodePath("CenterSide/NPCS/Blacksmith"), NodePath("CenterSide/NPCS/Nerd"), NodePath("CenterSide/NPCS/Chef"), NodePath("CenterSide/NPCS/Trash")]
+[node name="BadDayLevel" type="Node2D"]
 
 [node name="CenterSide" type="Node2D" parent="."]
 position = Vector2(0, -3.8146973e-06)
@@ -57,7 +48,7 @@ position = Vector2(0, -3.8146973e-06)
 [node name="House_A" type="Sprite2D" parent="CenterSide/Background"]
 position = Vector2(-781.125, -107.125)
 scale = Vector2(0.27593192, 0.26032257)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3173, 8600, 617, 775)
 
@@ -65,14 +56,14 @@ region_rect = Rect2(3173, 8600, 617, 775)
 position = Vector2(-312, -104)
 rotation = 3.1415925
 scale = Vector2(0.276, -0.26)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3173, 8600, 617, 775)
 
 [node name="House_A3" type="Sprite2D" parent="CenterSide/Background"]
 position = Vector2(-1312, -176)
 scale = Vector2(0.27593192, 0.26032257)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3173, 8600, 617, 775)
 
@@ -80,7 +71,7 @@ region_rect = Rect2(3173, 8600, 617, 775)
 position = Vector2(144.00005, -103.99999)
 rotation = 3.1415925
 scale = Vector2(0.276, -0.26)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3173, 8600, 617, 775)
 
@@ -88,21 +79,21 @@ region_rect = Rect2(3173, 8600, 617, 775)
 position = Vector2(952, -136)
 rotation = 3.1415925
 scale = Vector2(0.276, -0.26)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(4280, 8916, 779, 458)
 
 [node name="House_A6" type="Sprite2D" parent="CenterSide/Background"]
 position = Vector2(520, -184)
 scale = Vector2(0.27593192, 0.26032257)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3173, 8600, 617, 775)
 
 [node name="House_A7" type="Sprite2D" parent="CenterSide/Background"]
 position = Vector2(-1720, -592)
 scale = Vector2(0.27593192, 0.26032257)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(5153, 6958, 1691, 2594)
 
@@ -110,7 +101,7 @@ region_rect = Rect2(5153, 6958, 1691, 2594)
 position = Vector2(2096.0002, -744)
 rotation = -0.04145606
 scale = Vector2(0.27593192, 0.26032257)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(5153, 6958, 1691, 2594)
 
@@ -189,149 +180,149 @@ shape = SubResource("RectangleShape2D_04d7c")
 [node name="Grass" type="Node2D" parent="CenterSide"]
 
 [node name="grass" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-65.81251, 3.8146973e-06)
+position = Vector2(-65.81251, -2.8792686)
 scale = Vector2(0.0860584, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass2" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(96.00002, 3.8146973e-06)
+position = Vector2(96.00002, -2.8792686)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass3" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(232, 3.8146973e-06)
+position = Vector2(232, -2.8792686)
 scale = Vector2(0.07189215, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass4" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-208, 3.8146973e-06)
+position = Vector2(-208, -2.8792686)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass5" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-352, 3.8146973e-06)
+position = Vector2(-352, -2.8792686)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass7" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-659.62494, -2.1249933)
+position = Vector2(-659.62494, -5.004266)
 scale = Vector2(0.0860584, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass8" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-497.8125, -2.1249933)
+position = Vector2(-497.8125, -5.004266)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass9" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-801.8125, -2.1249933)
+position = Vector2(-801.8125, -5.004266)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass10" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-913.81256, -2.1249933)
+position = Vector2(-913.81256, -5.004266)
 scale = Vector2(0.046118338, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass6" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(323.62808, -7.999996)
+position = Vector2(323.62808, -10.879269)
 scale = Vector2(0.12666048, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3314, 3080, 448, 433)
 
 [node name="grass11" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-1179.6249, -74.12499)
+position = Vector2(-1179.6249, -77.004265)
 scale = Vector2(0.0860584, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass12" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-1017.8125, -74.12499)
+position = Vector2(-1017.8125, -77.004265)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass13" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-1321.8125, -74.12499)
+position = Vector2(-1321.8125, -77.004265)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass14" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-1445.8125, -74.12499)
+position = Vector2(-1445.8125, -77.004265)
 scale = Vector2(0.058100365, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass15" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-1711.9999, -304)
+position = Vector2(-1711.9999, -306.87927)
 scale = Vector2(0.0860584, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="rock_a" type="Sprite2D" parent="CenterSide/Grass"]
 position = Vector2(-1368, -80)
 scale = Vector2(0.0860584, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(5994, 2069, 141, 67)
 
 [node name="rock_a2" type="Sprite2D" parent="CenterSide/Grass/rock_a"]
 position = Vector2(278.87988, 64.28827)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(5994, 2069, 141, 67)
 
 [node name="rock_a3" type="Sprite2D" parent="CenterSide/Grass/rock_a"]
 position = Vector2(92.95996, 64.28827)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(5994, 2069, 141, 67)
 
 [node name="grass16" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-1553.8125, -306.125)
+position = Vector2(-1553.8125, -309.00427)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass17" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-1857.8125, -306.125)
+position = Vector2(-1857.8125, -309.00427)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass18" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(-1969.8125, -306.125)
+position = Vector2(-1969.8125, -309.00427)
 scale = Vector2(0.046118338, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
@@ -341,21 +332,21 @@ region_rect = Rect2(3603, 2373, 2003, 223)
 position = Vector2(-1136, -79.999985)
 rotation = 0.1753228
 scale = Vector2(-0.073941596, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(5994, 2069, 141, 67)
 
 [node name="rock_a2" type="Sprite2D" parent="CenterSide/Grass/rock_a2"]
 position = Vector2(278.87988, 64.28827)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(5994, 2069, 141, 67)
 
 [node name="rock_a3" type="Sprite2D" parent="CenterSide/Grass/rock_a2"]
 position = Vector2(92.95996, 64.28827)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(5994, 2069, 141, 67)
 
@@ -363,96 +354,96 @@ region_rect = Rect2(5994, 2069, 141, 67)
 position = Vector2(192.00002, -7.999996)
 rotation = -0.16698839
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(5994, 2069, 141, 67)
 
 [node name="grass19" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(540.37494, -82.125)
+position = Vector2(540.37494, -85.00427)
 scale = Vector2(0.0860584, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass20" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(702.1875, -82.125)
+position = Vector2(702.1875, -85.00427)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass21" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(838.18744, -82.125)
+position = Vector2(838.18744, -85.00427)
 scale = Vector2(0.07189215, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass22" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(398.1875, -82.125)
+position = Vector2(398.1875, -85.00427)
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass23" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(976, -80)
+position = Vector2(976, -82.87927)
 scale = Vector2(0.07189215, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass24" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(1104, -80)
+position = Vector2(1104, -82.87927)
 scale = Vector2(0.07189215, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass25" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(1240, 0)
+position = Vector2(1240, -2.8792725)
 scale = Vector2(0.08786819, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass26" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(1919.1514, -441.43738)
+position = Vector2(1919.1514, -444.31665)
 rotation = -0.10180845
 scale = Vector2(0.0860584, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass27" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(2071.9998, -447.99997)
+position = Vector2(2071.9998, -450.87924)
 rotation = -0.10180845
 scale = Vector2(0.07807038, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass28" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(2208, -456.00003)
+position = Vector2(2208, -458.8793)
 rotation = -0.10180845
 scale = Vector2(0.07189215, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass29" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(2343.9998, -455.99997)
+position = Vector2(2343.9998, -458.87924)
 rotation = -0.10180845
 scale = Vector2(0.07189215, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
 [node name="grass30" type="Sprite2D" parent="CenterSide/Grass"]
-position = Vector2(2471.9998, -455.99997)
+position = Vector2(2471.9998, -458.87924)
 rotation = -0.10180845
 scale = Vector2(0.07189215, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(3603, 2373, 2003, 223)
 
@@ -461,138 +452,121 @@ region_rect = Rect2(3603, 2373, 2003, 223)
 [node name="flower" type="Sprite2D" parent="CenterSide/Flowers"]
 position = Vector2(-1616, -328)
 scale = Vector2(0.21903402, 0.124439485)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7114, 9028, 295, 350)
 
 [node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower"]
 position = Vector2(126.667786, 161.30383)
 scale = Vector2(0.7362099, 0.6644914)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7724, 9074, 152, 292)
 
 [node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower"]
 position = Vector2(-146.09613, 128.5766)
 scale = Vector2(0.758217, 1.076496)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(8195, 9024, 239, 260)
 
 [node name="flower2" type="Sprite2D" parent="CenterSide/Flowers"]
 position = Vector2(-1720.0001, -320)
 scale = Vector2(0.09906509, 0.06715704)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7114, 9028, 295, 350)
 
 [node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower2"]
 position = Vector2(126.667786, 161.30383)
 scale = Vector2(0.7362099, 0.6644914)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7724, 9074, 152, 292)
 
 [node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower2"]
 position = Vector2(-146.09613, 128.5766)
 scale = Vector2(0.758217, 1.076496)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(8195, 9024, 239, 260)
 
 [node name="flower3" type="Sprite2D" parent="CenterSide/Flowers"]
 position = Vector2(-1783.9999, -320.00003)
 scale = Vector2(-0.1102674, 0.06935968)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7114, 9028, 295, 350)
 
 [node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower3"]
 position = Vector2(126.667786, 161.30383)
 scale = Vector2(0.7362099, 0.6644914)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7724, 9074, 152, 292)
 
 [node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower3"]
 position = Vector2(-146.09613, 128.5766)
 scale = Vector2(0.758217, 1.076496)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(8195, 9024, 239, 260)
 
 [node name="flower4" type="Sprite2D" parent="CenterSide/Flowers"]
 position = Vector2(-1840, -328.00003)
 scale = Vector2(-0.15424009, 0.10464835)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7114, 9028, 295, 350)
 
 [node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower4"]
 position = Vector2(126.667786, 161.30383)
 scale = Vector2(0.7362099, 0.6644914)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7724, 9074, 152, 292)
 
 [node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower4"]
 position = Vector2(-146.09613, 128.5766)
 scale = Vector2(0.758217, 1.076496)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(8195, 9024, 239, 260)
 
 [node name="flower5" type="Sprite2D" parent="CenterSide/Flowers"]
 position = Vector2(-856, -23.999996)
 scale = Vector2(0.14579648, 0.088199)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7114, 9028, 295, 350)
 
 [node name="flower" type="Sprite2D" parent="CenterSide/Flowers/flower5"]
 position = Vector2(126.667786, 161.30383)
 scale = Vector2(0.7362099, 0.6644914)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(7724, 9074, 152, 292)
 
 [node name="flower2" type="Sprite2D" parent="CenterSide/Flowers/flower5"]
 position = Vector2(-146.09613, 128.5766)
 scale = Vector2(0.758217, 1.076496)
-texture = ExtResource("1_fd2kr")
+texture = ExtResource("2_x8c5t")
 region_enabled = true
 region_rect = Rect2(8195, 9024, 239, 260)
 
 [node name="SlimeSign" type="Sprite2D" parent="CenterSide"]
 position = Vector2(1290, -33.999996)
 scale = Vector2(0.05940991, 0.04971057)
-texture = ExtResource("2_l7sb6")
+texture = ExtResource("3_52232")
 
 [node name="NightLevelTransition" type="Area2D" parent="CenterSide"]
 position = Vector2(1704, 832)
 collision_mask = 2
-script = ExtResource("2_h3o4c")
+script = ExtResource("4_gs5w2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CenterSide/NightLevelTransition"]
 position = Vector2(-48, 112)
 shape = SubResource("RectangleShape2D_e6u0x")
-
-[node name="NPCS" type="Node2D" parent="CenterSide"]
-
-[node name="Alcoholic" parent="CenterSide/NPCS" instance=ExtResource("7_60ktq")]
-position = Vector2(232, 0)
-
-[node name="Blacksmith" parent="CenterSide/NPCS" instance=ExtResource("5_e6u0x")]
-position = Vector2(-1184, -72)
-
-[node name="Nerd" parent="CenterSide/NPCS" instance=ExtResource("6_kj6hl")]
-position = Vector2(-296, 3.8146973e-06)
-
-[node name="Chef" parent="CenterSide/NPCS" instance=ExtResource("8_kj6hl")]
-position = Vector2(472, -80)
-
-[node name="Trash" parent="CenterSide/NPCS" instance=ExtResource("9_60ktq")]
-position = Vector2(960, -80)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1vext")
@@ -603,12 +577,7 @@ rotation = 1.6485332
 blend_mode = 2
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_lobii")]
+[node name="Player" parent="." instance=ExtResource("10_287oh")]
 position = Vector2(-704, -8)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_wlhx5")
-volume_db = -2.524
-autoplay = true
 
 [connection signal="body_entered" from="CenterSide/NightLevelTransition" to="CenterSide/NightLevelTransition" method="_on_body_entered"]

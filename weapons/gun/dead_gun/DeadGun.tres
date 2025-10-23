@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=4 format=3 uid="uid://b88pv5lak6nlm"]
+
+[ext_resource type="Texture2D" uid="uid://dfo0hwlsxhk0u" path="res://weapons/gun/dead_gun/dead_gun.png" id="1_umnf2"]
+[ext_resource type="PackedScene" uid="uid://cdg2sqmngc3ve" path="res://weapons/gun/dead_gun/DeadGun.tscn" id="2_kd4an"]
+[ext_resource type="Script" uid="uid://dai2x6s8ti0bg" path="res://weapons/WeaponData.gd" id="3_raomd"]
+
+[resource]
+script = ExtResource("3_raomd")
+weapon_name = "Dead Gun"
+weapon_type = 1
+icon = ExtResource("1_umnf2")
+scene = ExtResource("2_kd4an")
+metadata/_custom_type_script = "uid://dai2x6s8ti0bg"

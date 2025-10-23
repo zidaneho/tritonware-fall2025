@@ -3,10 +3,9 @@ extends AnimatedSprite2D
 signal clicked
 
 	
-
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("fire"):
-		if getCurrentFrameRect().has_point(to_local(event.global_position)):
+	if event.is_action_pressed("ui_accept"):
+		if getCurrentFrameRect().has_point(to_local(global_position)):
 			emit_signal("clicked")
 
 func getCurrentFrameRect() -> Rect2:

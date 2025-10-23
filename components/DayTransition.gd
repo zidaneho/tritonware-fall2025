@@ -23,7 +23,10 @@ func _ready():
 	get_tree().paused = false
 
 	# 4. Tell SceneChanger to load the DayLevel
-	SceneChanger.change_level("res://levels/DayLevel.tscn")
+	if not DataManager.get_all_npcs_dead():
+		SceneChanger.change_level("res://levels/DayLevel.tscn")
+	else:
+		get_tree().change_scene_to_file("res://legend/legend_full/legend_full.tscn")
 
 	# 5. Remove self
 	queue_free()

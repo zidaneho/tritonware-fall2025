@@ -1,11 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cxdje51dh373j"]
+[gd_scene load_steps=16 format=3 uid="uid://cxdje51dh373j"]
 
 [ext_resource type="Script" uid="uid://4t8ds8ipuu0f" path="res://button/button.gd" id="1_6ewp6"]
 [ext_resource type="Texture2D" uid="uid://cgbnmsmiwdvnk" path="res://button/button_neutral.png" id="1_38736"]
+[ext_resource type="Script" uid="uid://dai2x6s8ti0bg" path="res://weapons/WeaponData.gd" id="2_8ymfk"]
 [ext_resource type="Texture2D" uid="uid://dwgwi8js1wfi7" path="res://button/button_pressed_1.png" id="2_x4vop"]
 [ext_resource type="Texture2D" uid="uid://clntpn32veur0" path="res://button/button_pressed_2.png" id="3_67klq"]
+[ext_resource type="Resource" uid="uid://drxrmt4ahnmgq" path="res://weapons/gun/super_pistol/super_pistol.tres" id="3_mlvaq"]
+[ext_resource type="Resource" uid="uid://fhpsflt87rn1" path="res://weapons/gun/tec9/tec9.tres" id="4_1tq8q"]
 [ext_resource type="Texture2D" uid="uid://bt467yragyglw" path="res://button/button_pressed_3.png" id="4_6ewp6"]
-[ext_resource type="Script" uid="uid://bcr31kah27n4y" path="res://button/animatedButton.gd" id="6_ekjhl"]
+[ext_resource type="Resource" uid="uid://b88pv5lak6nlm" path="res://weapons/gun/dead_gun/DeadGun.tres" id="5_3xiem"]
+[ext_resource type="Resource" uid="uid://x7yw7v57qjjm" path="res://weapons/gun/winter_gun/WinterGun.tres" id="6_moxki"]
 [ext_resource type="AudioStream" uid="uid://8662b13ectgp" path="res://button/SFX_ElevatorButtonv3.wav" id="6_p16c8"]
 [ext_resource type="AudioStream" uid="uid://diq8h2tic7uq" path="res://button/SFX_ElevatorButtonv2.wav" id="7_ekjhl"]
 
@@ -55,11 +59,13 @@ size = Vector2(1846, 2826)
 
 [node name="button" type="Node2D"]
 script = ExtResource("1_6ewp6")
+weapons = Array[ExtResource("2_8ymfk")]([ExtResource("3_mlvaq"), ExtResource("4_1tq8q"), ExtResource("5_3xiem"), ExtResource("6_moxki")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p16c8")
 animation = &"pressed"
-script = ExtResource("6_ekjhl")
+frame = 6
+frame_progress = 1.0
 
 [node name="NormalButtonAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hwv1a")

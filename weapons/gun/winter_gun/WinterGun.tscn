@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvt4dac8g0wfe"]
+[gd_scene load_steps=10 format=3 uid="uid://bmycl35ycti5i"]
 
-[ext_resource type="Script" uid="uid://bsh1efaxetkw7" path="res://weapons/gun/pistol/pistol.gd" id="1_yloip"]
-[ext_resource type="Texture2D" uid="uid://cv54a46n3qstd" path="res://weapons/gun/pistol/3Pistol03.png" id="2_lua60"]
-[ext_resource type="Texture2D" uid="uid://cvqss1f7dmna" path="res://weapons/gun/utils/muzzleFlare.png" id="3_16sjl"]
+[ext_resource type="Script" uid="uid://bsh1efaxetkw7" path="res://weapons/gun/pistol/pistol.gd" id="1_mjx4s"]
+[ext_resource type="Texture2D" uid="uid://uetueaafs6ov" path="res://weapons/gun/winter_gun/winter_gun.png" id="2_effle"]
+[ext_resource type="Texture2D" uid="uid://cvqss1f7dmna" path="res://weapons/gun/utils/muzzleFlare.png" id="3_s8vpq"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_16sjl"]
 blend_mode = 1
@@ -36,27 +36,29 @@ scale_curve = SubResource("CurveTexture_bmtml")
 color_ramp = SubResource("GradientTexture1D_5fxbl")
 anim_offset_max = 1.0
 
-[node name="Pistol" type="Node2D" node_paths=PackedStringArray("muzzlePosition", "muzzleParticle")]
-script = ExtResource("1_yloip")
+[node name="WinterGun" type="Node2D" node_paths=PackedStringArray("muzzlePosition", "muzzleParticle")]
+script = ExtResource("1_mjx4s")
 muzzlePosition = NodePath("Muzzle")
 muzzleParticle = NodePath("Muzzle/MuzzleParticle")
 damage = 1
-range = 1000.0
+fire_rate = 5.0
+mag_size = 20
+range = 3000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(100, 100)
-texture = ExtResource("2_lua60")
+position = Vector2(559, 364)
+texture = ExtResource("2_effle")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(793, -295)
+position = Vector2(585, -281)
 
 [node name="MuzzleParticle" type="GPUParticles2D" parent="Muzzle"]
 material = SubResource("CanvasItemMaterial_16sjl")
-position = Vector2(1464, -43)
+position = Vector2(868, -33)
 emitting = false
 amount = 1
-texture = ExtResource("3_16sjl")
+texture = ExtResource("3_s8vpq")
 lifetime = 0.1
 one_shot = true
 local_coords = true

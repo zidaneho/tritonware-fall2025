@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-@onready var health_progress = $Container/PlayerInfoContainer/VBoxContainer/HealthContainer/ProgressBar
 @onready var slime_progress = $Container/GameInfoContainer/VBoxContainer/TimeInfo/ProgressBar
 @onready var time_label = $Container/GameInfoContainer/VBoxContainer/TimeInfo/TimeLabel
 
@@ -12,7 +11,6 @@ extends CanvasLayer
 @onready var apoc_manager = $"../SlimeOverloadManager"
 
 func _ready() -> void:
-	EventBus.player_took_damage.connect(update_health_bar)
 	EventBus.player_weapon_changed.connect(on_player_weapon_change)
 	EventBus.player_reloaded.connect(on_player_ammo_change)
 	EventBus.player_ammo_changed.connect(on_player_ammo_change)
@@ -34,10 +32,6 @@ func _on_time_changed(hours: int, minutes: int, is_am: bool) -> void:
 	var time_string = "%d:%02d %s" % [hours, minutes, am_str]
 	
 	time_label.text = time_string
-	
-func update_health_bar(current_health, max_health):
-	health_progress.value = current_health
-	health_progress.max_value = max_health
 
 func on_player_weapon_change(new_weapon, ammo, maxAmmo):
 	if new_weapon == null:

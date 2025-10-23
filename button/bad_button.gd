@@ -32,21 +32,14 @@ func press():
 		anim_sprite.play("pressed")
 		
 		# Play sound
-		normal_audio.play()
+		dark_audio.play()
 		
 		# once per day
 		buttonPressed = true
-		DataManager.set_button_pressed(true)
+		DataManager.start_new_game()
+		await get_tree().create_timer(3)
+		get_tree().quit()
 		
-		# someone dies
-		DataManager.kill_random_npc()
-		
-		# random chance of weapon
-		player = get_tree().get_first_node_in_group("players")
-		if weapons.size() > 0 and player and player.weapon_manager:
-			var random_index = randi_range(0,weapons.size()-1)
-			player.weapon_manager.add_and_instantiate_weapon(weapons[random_index])
-			print("added ",weapons[random_index].weapon_name)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

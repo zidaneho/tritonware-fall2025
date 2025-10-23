@@ -13,7 +13,7 @@ func _on_new_game_pressed() -> void:
 	# Tell DataManager to reset data and save a fresh file
 	DataManager.start_new_game()
 	# Change to the persistent game scene
-	get_tree().change_scene_to_file("res://components/Main.tscn")
+	get_tree().change_scene_to_file("res://legend/legend_partial/legend_partial.tscn")
 
 
 func _on_load_game_pressed() -> void:

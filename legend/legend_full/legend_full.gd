@@ -69,3 +69,5 @@ func start_cutscene() -> void:
 	
 	# Emit the signal
 	cutscene_finished.emit()
+	DataManager.start_new_game()
+	get_tree().quit()

@@ -7,5 +7,8 @@ func _ready() -> void:
 		for npc in npcs:
 			if not DataManager.is_npc_alive(npc.npc_id):
 				npc.queue_free()
+			else:
+				print("not dead")
+				
 		
 		

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var sprites = $Sprites
 @onready var invincibility_timer = $InvincibilityTimer
 @onready var animation_player = $AnimationPlayer
+@onready var weapon_manager = $WeaponManager
 
 var SPEED = 500
 var GRAVITY_PERC = 1.5

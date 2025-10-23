@@ -5,7 +5,6 @@ const SAVE_PATH = "user://game.save"
 # This dictionary holds the "runtime" data your game uses.
 # We set defaults for a new game.
 const saved_npc_states_default = {
-	"npc1":{"heart_level":0,"is_alive":true},
 	"blacksmith":{"heart_level":0,"is_alive":true},
 	"chef":{"heart_level":0,"is_alive":true},
 	"nerd":{"heart_level":0,"is_alive":true},
@@ -15,7 +14,7 @@ const saved_npc_states_default = {
 var _last_day_slimes_killed = 0
 var game_data = {
 	"unlocked_weapons": [] as Array[WeaponData], # This will hold loaded WeaponData resources
-	"saved_npc_states" : saved_npc_states_default,
+	"saved_npc_states" : saved_npc_states_default.duplicate(true),
 	"player_gold": 0,
 	"current_level": 1,
 	"music_volume": 0.8,
@@ -24,7 +23,8 @@ var game_data = {
 	"gametime_minutes":0,
 	"gametime_is_am" : true,
 	"slime_apoc_progress":0,
-	"button_pressed":false
+	"button_pressed":false,
+	"all_npcs_dead" : false
 }
 
 
@@ -39,7 +39,32 @@ func is_npc_alive(npc_id : String):
 	if game_data.saved_npc_states.has(npc_id):
 		return game_data.saved_npc_states[npc_id]['is_alive']
 	return false
+func kill_random_npc():
+	# 1. Create a list of all NPCs who are currently alive
+	var alive_npcs = []
+	for npc_id in game_data.saved_npc_states:
+		if game_data.saved_npc_states[npc_id]["is_alive"]:
+			alive_npcs.append(npc_id)
+			
+	# 2. Check if the list has anyone in it
+	if not alive_npcs.is_empty():
+		# 3. Pick one at random
+		var random_npc_id = alive_npcs.pick_random()
 		
+		# 4. Set their 'is_alive' status to false
+		game_data.saved_npc_states[random_npc_id]["is_alive"] = false
+		
+		print("DataManager: Killed random NPC: ", random_npc_id)
+		if alive_npcs.size() <= 1:
+			game_data.all_npcs_dead = true
+			print("DataManager: No alive NPCs left to kill.")
+		# 5. Save this change
+		save_game()
+	else:
+		print("DataManager: No alive NPCs left to kill.")
+		game_data.all_npcs_dead = true
+		save_game()
+	
 
 # Call this from your shop or pickups
 func add_weapon(new_weapon: WeaponData):
@@ -100,7 +125,8 @@ func get_slime_apoc_progress():
 	return game_data.slime_apoc_progress
 func set_last_day_stats(slimes_killed: int):
 	_last_day_slimes_killed = slimes_killed
-
+func get_all_npcs_dead():
+	return game_data.all_npcs_dead
 func get_last_day_slimes_killed() -> int:
 	return _last_day_slimes_killed
 
@@ -160,7 +186,7 @@ func load_game():
 	game_data.player_gold = save_dict.get("player_gold", 0)
 	game_data.current_level = save_dict.get("current_level", 1)
 	game_data.music_volume = save_dict.get("music_volume", 0.8)
-	game_data.saved_npc_states = save_dict.get("saved_npc_states",saved_npc_states_default)
+	game_data.saved_npc_states = save_dict.get("saved_npc_states",saved_npc_states_default.duplicate(true))
 	
 	
 	game_data.gametime_day = save_dict.get("gametime_day",1)
@@ -169,7 +195,7 @@ func load_game():
 	game_data.gametime_is_am = save_dict.get("gametime_is_am",true)
 	game_data.slime_apoc_progress = save_dict.get("slime_apoc_progress",0)
 	game_data.button_pressed = save_dict.get("button_pressed",false)
-
+	game_data.all_npcs_dead = save_dict.get("all_npcs_dead",false)
 	# 2. Convert saved weapon paths back into loaded WeaponData resources
 	game_data.unlocked_weapons.clear()
 	var weapon_paths = save_dict.get("unlocked_weapons", [])
@@ -185,7 +211,7 @@ func load_game():
 func start_new_game():
 	game_data = {
 		"unlocked_weapons": [] as Array[WeaponData], # This will hold loaded WeaponData resources
-		"saved_npc_states" : saved_npc_states_default,
+		"saved_npc_states" : saved_npc_states_default.duplicate(true),
 		"player_gold": 0,
 		"current_level": 1,
 		"music_volume": game_data.music_volume,
@@ -195,6 +221,7 @@ func start_new_game():
 		"gametime_is_am" : true,
 		"slime_apoc_progress":0,
 		"button_pressed":false,
+		"all_npcs_dead":false,
 	}
 	save_game()
 	print("Data Manager: Started new game, save file reset to defaults.")

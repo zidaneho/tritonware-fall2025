@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvt4dac8g0wfe"]
+[gd_scene load_steps=10 format=3 uid="uid://b1t1i75ao4n8y"]
 
-[ext_resource type="Script" uid="uid://bsh1efaxetkw7" path="res://weapons/gun/pistol/pistol.gd" id="1_yloip"]
-[ext_resource type="Texture2D" uid="uid://cv54a46n3qstd" path="res://weapons/gun/pistol/3Pistol03.png" id="2_lua60"]
-[ext_resource type="Texture2D" uid="uid://cvqss1f7dmna" path="res://weapons/gun/utils/muzzleFlare.png" id="3_16sjl"]
+[ext_resource type="Script" uid="uid://bsh1efaxetkw7" path="res://weapons/gun/pistol/pistol.gd" id="1_stx6i"]
+[ext_resource type="Texture2D" uid="uid://bpv7rptfuehmt" path="res://weapons/gun/tec9/tec9.png" id="2_5vlch"]
+[ext_resource type="Texture2D" uid="uid://cvqss1f7dmna" path="res://weapons/gun/utils/muzzleFlare.png" id="3_0crqt"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_16sjl"]
 blend_mode = 1
@@ -36,28 +36,31 @@ scale_curve = SubResource("CurveTexture_bmtml")
 color_ramp = SubResource("GradientTexture1D_5fxbl")
 anim_offset_max = 1.0
 
-[node name="Pistol" type="Node2D" node_paths=PackedStringArray("muzzlePosition", "muzzleParticle")]
-script = ExtResource("1_yloip")
+[node name="Tec9" type="Node2D" node_paths=PackedStringArray("muzzlePosition", "muzzleParticle")]
+script = ExtResource("1_stx6i")
 muzzlePosition = NodePath("Muzzle")
 muzzleParticle = NodePath("Muzzle/MuzzleParticle")
+gun_name = "Tec9"
 damage = 1
+fire_rate = 3.0
+mag_size = 15
 range = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(100, 100)
-texture = ExtResource("2_lua60")
+position = Vector2(628, 658)
+texture = ExtResource("2_5vlch")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(793, -295)
 
 [node name="MuzzleParticle" type="GPUParticles2D" parent="Muzzle"]
 material = SubResource("CanvasItemMaterial_16sjl")
-position = Vector2(1464, -43)
+position = Vector2(991, -193)
 emitting = false
 amount = 1
-texture = ExtResource("3_16sjl")
-lifetime = 0.1
+texture = ExtResource("3_0crqt")
+lifetime = 0.12
 one_shot = true
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_sy7wo")

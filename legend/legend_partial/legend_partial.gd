@@ -49,4 +49,6 @@ func start_cutscene() -> void:
 	music_player.stop()
 	
 	# Emit the signal
+	
 	cutscene_finished.emit()
+	get_tree().change_scene_to_file("res://components/Main.tscn")
