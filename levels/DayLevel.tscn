@@ -1,10 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://cjahjjy06ptq4"]
+[gd_scene load_steps=23 format=3 uid="uid://cjahjjy06ptq4"]
 
+[ext_resource type="Script" uid="uid://dix8ylxu7s3of" path="res://levels/DayLevel.gd" id="1_5xgmo"]
 [ext_resource type="Texture2D" uid="uid://dmkkqlhmlaovr" path="res://levels/day_level_2.png" id="1_fd2kr"]
 [ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_lobii"]
-[ext_resource type="Script" path="res://levels/night_level_transition.gd" id="2_h3o4c"]
+[ext_resource type="Script" uid="uid://dipujktovs3sq" path="res://levels/night_level_transition.gd" id="2_h3o4c"]
 [ext_resource type="Texture2D" uid="uid://btofg70axxjh2" path="res://levels/Slime_Sign.png" id="2_l7sb6"]
 [ext_resource type="AudioStream" uid="uid://55o1j73nwxbe" path="res://audio/background/Overworld.wav" id="2_wlhx5"]
+[ext_resource type="PackedScene" uid="uid://xnsjyisyywjg" path="res://npc/blacksmith/Blacksmith.tscn" id="5_e6u0x"]
+[ext_resource type="PackedScene" uid="uid://bh2muf2j4flyx" path="res://npc/nerd/Nerd.tscn" id="6_kj6hl"]
+[ext_resource type="PackedScene" uid="uid://dmexe0cqtdjb8" path="res://npc/alcoholic/Alcoholic.tscn" id="7_60ktq"]
+[ext_resource type="PackedScene" uid="uid://dvuwwu0hi5gkt" path="res://npc/chef/Chef.tscn" id="8_kj6hl"]
+[ext_resource type="PackedScene" uid="uid://wr0yg7c138ee" path="res://npc/trash/Trash.tscn" id="9_60ktq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fd2kr"]
 size = Vector2(1336, 450)
@@ -40,6 +46,7 @@ sky = SubResource("Sky_lobii")
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_lobii"]
 
 [node name="DayLevel" type="Node2D"]
+script = ExtResource("1_5xgmo")
 
 [node name="CenterSide" type="Node2D" parent="."]
 position = Vector2(0, -3.8146973e-06)
@@ -569,6 +576,23 @@ script = ExtResource("2_h3o4c")
 position = Vector2(-48, 112)
 shape = SubResource("RectangleShape2D_e6u0x")
 
+[node name="NPCS" type="Node2D" parent="CenterSide"]
+
+[node name="Alcoholic" parent="CenterSide/NPCS" instance=ExtResource("7_60ktq")]
+position = Vector2(232, 0)
+
+[node name="Blacksmith" parent="CenterSide/NPCS" instance=ExtResource("5_e6u0x")]
+position = Vector2(-1184, -72)
+
+[node name="Nerd" parent="CenterSide/NPCS" instance=ExtResource("6_kj6hl")]
+position = Vector2(-296, 3.8146973e-06)
+
+[node name="Chef" parent="CenterSide/NPCS" instance=ExtResource("8_kj6hl")]
+position = Vector2(472, -80)
+
+[node name="Trash" parent="CenterSide/NPCS" instance=ExtResource("9_60ktq")]
+position = Vector2(960, -80)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1vext")
 camera_attributes = SubResource("CameraAttributesPractical_lobii")
@@ -579,6 +603,7 @@ blend_mode = 2
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_lobii")]
+position = Vector2(-704, -8)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wlhx5")

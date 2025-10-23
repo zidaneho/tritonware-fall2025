@@ -1,0 +1,58 @@
+[gd_scene load_steps=12 format=3 uid="uid://bh2muf2j4flyx"]
+
+[ext_resource type="Script" uid="uid://ets28p33behg" path="res://npc/NPCInstance.gd" id="1_0mw87"]
+[ext_resource type="Texture2D" uid="uid://dxn7vx4pjy3wv" path="res://player/art/body_1.png" id="3_5diab"]
+[ext_resource type="Texture2D" uid="uid://7ggfrao6pdjr" path="res://player/art/right_hand.png" id="4_jhdhq"]
+[ext_resource type="Texture2D" uid="uid://bo8xh5y3jie5s" path="res://player/art/left_hand.png" id="5_kjd81"]
+[ext_resource type="Texture2D" uid="uid://dhxiajplqerir" path="res://player/art/left_foot.png" id="6_1q57k"]
+[ext_resource type="Texture2D" uid="uid://ctsklcwli7klu" path="res://player/art/right_foot.png" id="7_n046m"]
+[ext_resource type="Texture2D" uid="uid://bqbqp6bxbmflk" path="res://player/art/eyes.png" id="8_cqvgp"]
+[ext_resource type="Texture2D" uid="uid://dh608m8wgrkab" path="res://player/art/eyes_highlight.png" id="9_r3iic"]
+[ext_resource type="Texture2D" uid="uid://b3tmgnmdc7x5s" path="res://player/art/eyes_pupils.png" id="10_b4q56"]
+[ext_resource type="Texture2D" uid="uid://d3kqmcxg86e3h" path="res://npc/nerd/Glasses.png" id="11_8lioh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai6sv"]
+size = Vector2(81, 59.5)
+
+[node name="Nerd" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_0mw87")
+npc_id = "nerd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -30.75)
+shape = SubResource("RectangleShape2D_ai6sv")
+
+[node name="Sprites" type="Node2D" parent="."]
+modulate = Color(0.36862746, 1, 0.5019608, 1)
+position = Vector2(-3, -21)
+scale = Vector2(0.01, 0.01)
+
+[node name="Body" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("3_5diab")
+
+[node name="Right_Hand" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("4_jhdhq")
+
+[node name="Left_Hand" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("5_kjd81")
+
+[node name="Left_Foot" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("6_1q57k")
+
+[node name="Right_Foot" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("7_n046m")
+
+[node name="Eyes" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("8_cqvgp")
+
+[node name="Eyes_Highlight" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("9_r3iic")
+
+[node name="Eyes_Pupils" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("10_b4q56")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -23)
+scale = Vector2(0.015, 0.011)
+texture = ExtResource("11_8lioh")

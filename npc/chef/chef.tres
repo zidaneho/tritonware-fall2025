@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://c0kjqdf30uogf"]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_dogmg"]
+[ext_resource type="Script" uid="uid://bbcl20g2ild8a" path="res://npc/NPCData.gd" id="2_xoccn"]
+[ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="3_lqgbu"]
+
+[resource]
+script = ExtResource("2_xoccn")
+npc_name = "Chef"
+npc_description = "A Chef"
+metadata/_custom_type_script = "uid://bbcl20g2ild8a"

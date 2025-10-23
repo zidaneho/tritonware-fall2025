@@ -29,6 +29,12 @@ func _ready():
 
 # --- Public Functions (How other scripts talk to it) ---
 
+func is_npc_alive(npc_id : String):
+	if game_data.saved_npc_states.has(npc_id):
+		return game_data.saved_npc_states[npc_id]['is_alive']
+	return false
+		
+
 # Call this from your shop or pickups
 func add_weapon(new_weapon: WeaponData):
 	if not game_data.unlocked_weapons.has(new_weapon):

@@ -1,60 +1,66 @@
-[gd_scene load_steps=13 format=3 uid="uid://bh2muf2j4flyx"]
+[gd_scene load_steps=14 format=3 uid="uid://dvuwwu0hi5gkt"]
 
-[ext_resource type="Script" uid="uid://ets28p33behg" path="res://npc/NPCInstance.gd" id="1_3j56d"]
-[ext_resource type="Resource" uid="uid://jx8xce7xhdd2" path="res://npc/blacksmith/blacksmith.tres" id="2_e16r2"]
-[ext_resource type="Texture2D" uid="uid://dxn7vx4pjy3wv" path="res://player/art/body_1.png" id="3_jokem"]
-[ext_resource type="Texture2D" uid="uid://7ggfrao6pdjr" path="res://player/art/right_hand.png" id="4_n5hn7"]
-[ext_resource type="Texture2D" uid="uid://bo8xh5y3jie5s" path="res://player/art/left_hand.png" id="5_j2slt"]
-[ext_resource type="Texture2D" uid="uid://dhxiajplqerir" path="res://player/art/left_foot.png" id="6_752hm"]
-[ext_resource type="Texture2D" uid="uid://ctsklcwli7klu" path="res://player/art/right_foot.png" id="7_j4tn2"]
-[ext_resource type="Texture2D" uid="uid://bqbqp6bxbmflk" path="res://player/art/eyes.png" id="8_ykxba"]
-[ext_resource type="Texture2D" uid="uid://dh608m8wgrkab" path="res://player/art/eyes_highlight.png" id="9_hhcsi"]
-[ext_resource type="Texture2D" uid="uid://b3tmgnmdc7x5s" path="res://player/art/eyes_pupils.png" id="10_qo0qp"]
-[ext_resource type="Texture2D" uid="uid://y36gck5flkly" path="res://npc/blacksmith/Blacksmith.png" id="11_uyw2d"]
+[ext_resource type="Script" uid="uid://ets28p33behg" path="res://npc/NPCInstance.gd" id="1_ec0r6"]
+[ext_resource type="Resource" uid="uid://c0kjqdf30uogf" path="res://npc/chef/chef.tres" id="2_ha3sy"]
+[ext_resource type="Texture2D" uid="uid://dxn7vx4pjy3wv" path="res://player/art/body_1.png" id="3_atr7e"]
+[ext_resource type="Texture2D" uid="uid://7ggfrao6pdjr" path="res://player/art/right_hand.png" id="4_um0fv"]
+[ext_resource type="Texture2D" uid="uid://bo8xh5y3jie5s" path="res://player/art/left_hand.png" id="5_kx4jd"]
+[ext_resource type="Texture2D" uid="uid://dhxiajplqerir" path="res://player/art/left_foot.png" id="6_5ucq7"]
+[ext_resource type="Texture2D" uid="uid://ctsklcwli7klu" path="res://player/art/right_foot.png" id="7_ngaod"]
+[ext_resource type="Texture2D" uid="uid://bqbqp6bxbmflk" path="res://player/art/eyes.png" id="8_hfjsx"]
+[ext_resource type="Texture2D" uid="uid://dh608m8wgrkab" path="res://player/art/eyes_highlight.png" id="9_x15bp"]
+[ext_resource type="Texture2D" uid="uid://b3tmgnmdc7x5s" path="res://player/art/eyes_pupils.png" id="10_fqc73"]
+[ext_resource type="Texture2D" uid="uid://8mixydpfvqir" path="res://npc/chef/Chef_Hat.png" id="11_ha3sy"]
+[ext_resource type="Texture2D" uid="uid://c0q2xsuvhl4q2" path="res://npc/chef/Golden_Spatula.png" id="12_atr7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai6sv"]
 size = Vector2(81, 59.5)
 
-[node name="Npc1" type="CharacterBody2D"]
+[node name="Chef" type="CharacterBody2D"]
 collision_layer = 8
-script = ExtResource("1_3j56d")
-npc_data = ExtResource("2_e16r2")
-npc_id = "blacksmith"
+script = ExtResource("1_ec0r6")
+npc_data = ExtResource("2_ha3sy")
+npc_id = "chef"
 
 [node name="Sprites" type="Node2D" parent="."]
-modulate = Color(0.984958, 0.6196691, 0, 1)
+modulate = Color(0, 0.81764436, 0.7918632, 1)
 position = Vector2(-3, -21)
 scale = Vector2(0.01, 0.01)
 
 [node name="Body" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("3_jokem")
+texture = ExtResource("3_atr7e")
 
 [node name="Right_Hand" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("4_n5hn7")
+texture = ExtResource("4_um0fv")
 
 [node name="Left_Hand" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("5_j2slt")
+texture = ExtResource("5_kx4jd")
 
 [node name="Left_Foot" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("6_752hm")
+texture = ExtResource("6_5ucq7")
 
 [node name="Right_Foot" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("7_j4tn2")
+texture = ExtResource("7_ngaod")
 
 [node name="Eyes" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("8_ykxba")
+texture = ExtResource("8_hfjsx")
 
 [node name="Eyes_Highlight" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("9_hhcsi")
+texture = ExtResource("9_x15bp")
 
 [node name="Eyes_Pupils" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("10_qo0qp")
+texture = ExtResource("10_fqc73")
 
-[node name="Blacksmith" type="Sprite2D" parent="."]
-position = Vector2(-1.9999983, -23)
-scale = Vector2(0.019428572, 0.019843753)
-texture = ExtResource("11_uyw2d")
+[node name="ChefHat" type="Sprite2D" parent="."]
+position = Vector2(0, -33)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("11_ha3sy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -30.75)
 shape = SubResource("RectangleShape2D_ai6sv")
+
+[node name="GoldenSpatula" type="Sprite2D" parent="."]
+position = Vector2(1, -21)
+scale = Vector2(0.017142856, 0.0145000005)
+texture = ExtResource("12_atr7e")

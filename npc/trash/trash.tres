@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://bbclxrhacrmy1"]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_q5nnm"]
+[ext_resource type="Script" uid="uid://bbcl20g2ild8a" path="res://npc/NPCData.gd" id="2_1x23e"]
+[ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="3_fo448"]
+
+[resource]
+script = ExtResource("2_1x23e")
+npc_name = "Trash"
+npc_description = "Trashy"
+metadata/_custom_type_script = "uid://bbcl20g2ild8a"

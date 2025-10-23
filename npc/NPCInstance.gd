@@ -1,4 +1,4 @@
-extends Node2D
+class_name NPCInstance extends Node2D
 
 @export var npc_data : NPCData
 @export var npc_id : String

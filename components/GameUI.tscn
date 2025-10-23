@@ -29,27 +29,49 @@ theme_override_constants/margin_bottom = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Container/GameInfoContainer"]
 layout_mode = 2
+theme_override_constants/separation = 18
 
-[node name="DayLabel" type="Label" parent="Container/GameInfoContainer/VBoxContainer"]
+[node name="TimeInfo" type="VBoxContainer" parent="Container/GameInfoContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DayLabel" type="Label" parent="Container/GameInfoContainer/VBoxContainer/TimeInfo"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Day 1"
 horizontal_alignment = 1
 
-[node name="TimeLabel" type="Label" parent="Container/GameInfoContainer/VBoxContainer"]
+[node name="TimeLabel" type="Label" parent="Container/GameInfoContainer/VBoxContainer/TimeInfo"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Hour : Minute AM"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Container/GameInfoContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Container/GameInfoContainer/VBoxContainer/TimeInfo"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Slime Overload:"
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Container/GameInfoContainer/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="Container/GameInfoContainer/VBoxContainer/TimeInfo"]
 layout_mode = 2
+
+[node name="QuestInfo" type="VBoxContainer" parent="Container/GameInfoContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container/GameInfoContainer/VBoxContainer/QuestInfo"]
+layout_mode = 2
+text = "Objectives:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Container/GameInfoContainer/VBoxContainer/QuestInfo"]
+layout_mode = 2
+text = "Kill Slimes"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Container/GameInfoContainer/VBoxContainer/QuestInfo"]
+layout_mode = 2
+text = "Talk to the villagers"
+horizontal_alignment = 1
 
 [node name="PlayerInfoContainer" type="MarginContainer" parent="Container"]
 layout_mode = 1
