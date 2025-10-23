@@ -1,0 +1,7 @@
+~ start0
+: Alcoholic: Bring me 1 Bottle of Springwater. I’ll sober up and show you a parry trick. [Tab to return]
+=> END
+
+~ start1
+: Alcoholic: No water? Guess we both wait. [Tab when you’ve got it]
+=> END

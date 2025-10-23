@@ -1,0 +1,8 @@
+~ start0
+: Blacksmith: Back again? Guess my work’s worth the coin. Heart 1 means we’re officially acquaintances.
+Blacksmith: I can temper your sword for a small fee—or a bowl of pan-fried noodles.
+=> END
+
+~ start1
+: Blacksmith: Between swords and spears—swords win for style points. No debate.
+=> END

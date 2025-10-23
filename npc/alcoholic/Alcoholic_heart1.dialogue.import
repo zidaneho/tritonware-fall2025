@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bxob0pkomdpd8"
+path="res://.godot/imported/Alcoholic_heart1.dialogue-2a64c98b964ac04067944fbe863a19cc.tres"
+
+[deps]
+
+source_file="res://npc/alcoholic/Alcoholic_heart1.dialogue"
+dest_files=["res://.godot/imported/Alcoholic_heart1.dialogue-2a64c98b964ac04067944fbe863a19cc.tres"]
+
+[params]
+
+defaults=true

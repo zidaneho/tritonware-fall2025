@@ -1,0 +1,11 @@
+~ start0
+: Alcoholic: You look like someone who knows their way around a bar... or a battlefield.
+Alcoholic: I used to guard Blobtown. Now I guard my stool.
+Alcoholic: Swords or spears?
+Alcoholic (choice): Sword -> Good swing. Good sound. Good memories.
+Alcoholic (choice): Spear -> Keep 'em at range. Smart if your knees hurt.
+=> END
+
+~ start1
+: Alcoholic: If you meet that trash can, don’t argue with it. You’ll lose.
+=> END

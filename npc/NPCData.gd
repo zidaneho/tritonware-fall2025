@@ -8,6 +8,8 @@ class_name NPCData extends Resource
 
 func get_dialogue_to_play(current_heart_level : int):
 	for special_dialogue in special_dialogue_map:
+		if special_dialogue == null:
+			continue
 		if special_dialogue.heart_level == current_heart_level:
 			return special_dialogue.dialogue
 	if normal_dialogues.size() <= 0:

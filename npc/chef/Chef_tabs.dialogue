@@ -1,0 +1,7 @@
+~ start0
+: Chef: Bring me 2 Forest Mushrooms and 1 Sea Salt. I’ll cook Pan-Fried Noodles. [Tab to return with ingredients]
+=> END
+
+~ start1
+: Chef: All out of ingredients? Come back later! [Tab when you’ve got them]
+=> END

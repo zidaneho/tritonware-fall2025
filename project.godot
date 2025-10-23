@@ -89,7 +89,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://npc/npc1/day1.dialogue", "res://npc/blacksmith/heart0.dialogue")
+locale/translations_pot_files=PackedStringArray("res://npc/npc1/day1.dialogue", "res://npc/blacksmith/heart0.dialogue", "res://npc/nerd/Nerd_heart1.dialogue", "res://npc/nerd/Nerd_random1.dialogue", "res://npc/nerd/Nerd_tabs.dialogue", "res://npc/nerd/Nerd_random2.dialogue", "res://npc/nerd/Nerd_heart0.dialogue", "res://npc/alcoholic/Alcoholic_heart0.dialogue", "res://npc/alcoholic/Alcoholic_heart1.dialogue", "res://npc/alcoholic/Alcoholic_random1.dialogue", "res://npc/alcoholic/Alcoholic_tabs.dialogue", "res://npc/alcoholic/Alcoholic_random2.dialogue", "res://npc/trash/Trash_random2.dialogue", "res://npc/trash/Trash_random1.dialogue", "res://npc/trash/Trash_heart0.dialogue", "res://npc/chef/Chef_heart0.dialogue", "res://npc/chef/Chef_heart1.dialogue", "res://npc/chef/Chef_random2.dialogue", "res://npc/chef/Chef_random1.dialogue", "res://npc/chef/Chef_tabs.dialogue", "res://npc/blacksmith/Blacksmith_random1.dialogue", "res://npc/blacksmith/Blacksmith_heart1.dialogue", "res://npc/blacksmith/Blacksmith_heart0.dialogue")
 
 [layer_names]
 

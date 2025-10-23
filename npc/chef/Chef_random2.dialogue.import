@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bmt165ana2nd8"
+path="res://.godot/imported/Chef_random2.dialogue-c68d09c01d0e040eae747efae2e87a6f.tres"
+
+[deps]
+
+source_file="res://npc/chef/Chef_random2.dialogue"
+dest_files=["res://.godot/imported/Chef_random2.dialogue-c68d09c01d0e040eae747efae2e87a6f.tres"]
+
+[params]
+
+defaults=true

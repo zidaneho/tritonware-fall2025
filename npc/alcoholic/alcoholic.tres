@@ -1,11 +1,17 @@
-[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://dapmwdrspye4c"]
+[gd_resource type="Resource" script_class="NPCData" load_steps=8 format=3 uid="uid://dapmwdrspye4c"]
 
 [ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_pffq2"]
 [ext_resource type="Script" uid="uid://bbcl20g2ild8a" path="res://npc/NPCData.gd" id="2_ddb30"]
+[ext_resource type="Resource" uid="uid://ckda73hb0x7n6" path="res://npc/alcoholic/Alcoholic_random1.dialogue" id="2_llorc"]
+[ext_resource type="Resource" uid="uid://dcpj70ne3ijqi" path="res://npc/alcoholic/Alcoholic_random2.dialogue" id="3_axc7l"]
 [ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="3_b20qq"]
+[ext_resource type="Resource" uid="uid://c1chjn0ir8nnv" path="res://npc/alcoholic/heart0.tres" id="6_2grr2"]
+[ext_resource type="Resource" uid="uid://m1lgxff0y0lg" path="res://npc/alcoholic/heart1.tres" id="7_k3mn1"]
 
 [resource]
 script = ExtResource("2_ddb30")
 npc_name = "Alcoholic"
 npc_description = "An alcoholic"
+special_dialogue_map = Array[ExtResource("3_b20qq")]([ExtResource("6_2grr2"), ExtResource("7_k3mn1")])
+normal_dialogues = Array[ExtResource("1_pffq2")]([ExtResource("2_llorc"), ExtResource("3_axc7l")])
 metadata/_custom_type_script = "uid://bbcl20g2ild8a"

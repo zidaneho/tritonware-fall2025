@@ -1,11 +1,16 @@
-[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://jx8xce7xhdd2"]
+[gd_resource type="Resource" script_class="NPCData" load_steps=7 format=3 uid="uid://jx8xce7xhdd2"]
 
 [ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_4j274"]
 [ext_resource type="Script" uid="uid://bbcl20g2ild8a" path="res://npc/NPCData.gd" id="2_3enxy"]
+[ext_resource type="Resource" uid="uid://cfajohydsv3cm" path="res://npc/blacksmith/Blacksmith_random1.dialogue" id="2_uosjw"]
 [ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="3_uosjw"]
+[ext_resource type="Resource" uid="uid://fqyhga7hcdfe" path="res://npc/blacksmith/heart0.tres" id="5_00c8n"]
+[ext_resource type="Resource" uid="uid://bv8lmpe72pigl" path="res://npc/blacksmith/heart1.tres" id="6_00c8n"]
 
 [resource]
 script = ExtResource("2_3enxy")
 npc_name = "Blacksmith"
 npc_description = "A blacksmith"
+special_dialogue_map = Array[ExtResource("3_uosjw")]([ExtResource("5_00c8n"), ExtResource("6_00c8n")])
+normal_dialogues = Array[ExtResource("1_4j274")]([ExtResource("2_uosjw")])
 metadata/_custom_type_script = "uid://bbcl20g2ild8a"

@@ -1,0 +1,7 @@
+~ start0
+: Nerd: Fetch quest! I need 1 Slime Core and 1 Feather. Science waits for no one. [Tab to return with items]
+=> END
+
+~ start1
+: Nerd: No components? That’s okay. I’ll simulate success instead. [Tab when ready]
+=> END

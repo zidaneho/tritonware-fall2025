@@ -1,11 +1,17 @@
-[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://c0kjqdf30uogf"]
+[gd_resource type="Resource" script_class="NPCData" load_steps=8 format=3 uid="uid://c0kjqdf30uogf"]
 
 [ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_dogmg"]
+[ext_resource type="Resource" uid="uid://d0v3toskaox8t" path="res://npc/chef/Chef_random1.dialogue" id="2_8g2su"]
 [ext_resource type="Script" uid="uid://bbcl20g2ild8a" path="res://npc/NPCData.gd" id="2_xoccn"]
+[ext_resource type="Resource" uid="uid://bmt165ana2nd8" path="res://npc/chef/Chef_random2.dialogue" id="3_1j6af"]
 [ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="3_lqgbu"]
+[ext_resource type="Resource" uid="uid://p5e5uweri7xb" path="res://npc/chef/heart0.tres" id="6_ywq5d"]
+[ext_resource type="Resource" uid="uid://bhyb2x4awbtdp" path="res://npc/chef/heart1.tres" id="7_35525"]
 
 [resource]
 script = ExtResource("2_xoccn")
 npc_name = "Chef"
 npc_description = "A Chef"
+special_dialogue_map = Array[ExtResource("3_lqgbu")]([ExtResource("6_ywq5d"), ExtResource("7_35525")])
+normal_dialogues = Array[ExtResource("1_dogmg")]([ExtResource("2_8g2su"), ExtResource("3_1j6af")])
 metadata/_custom_type_script = "uid://bbcl20g2ild8a"

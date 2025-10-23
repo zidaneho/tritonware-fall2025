@@ -3,7 +3,7 @@ extends Node2D
 @onready var minute_timer := $MinuteTimer
 
 @export var minutes_per_tick := 30       # how many in-game minutes added per timer tick
-@export var seconds_per_tick := .2     # real seconds between ticks (tunes game speed)
+@export var seconds_per_tick := 5    # real seconds between ticks (tunes game speed)
 @export var start_hour := 8             # 1..12
 @export var start_is_am := true        # false = PM
 @export var end_hour := 4
@@ -31,6 +31,8 @@ func start_day():
 	minute_timer.one_shot = false
 	minute_timer.start()
 	emit_signal("time_changed",hours,minutes,is_am)
+func poll_initial_time():
+	emit_signal("time_changed", hours, minutes, is_am)
 
 func _on_tick():
 	_add_minutes(minutes_per_tick)

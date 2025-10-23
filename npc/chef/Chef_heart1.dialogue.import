@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://duetdjdes00p3"
+path="res://.godot/imported/Chef_heart1.dialogue-bb4add634ed30a68fc19873d54df2f62.tres"
+
+[deps]
+
+source_file="res://npc/chef/Chef_heart1.dialogue"
+dest_files=["res://.godot/imported/Chef_heart1.dialogue-bb4add634ed30a68fc19873d54df2f62.tres"]
+
+[params]
+
+defaults=true

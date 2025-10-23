@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cpv62vhltqfh3"
+path="res://.godot/imported/Blacksmith_heart0.dialogue-2614b02e59e6337e974c9df1012c3dca.tres"
+
+[deps]
+
+source_file="res://npc/blacksmith/Blacksmith_heart0.dialogue"
+dest_files=["res://.godot/imported/Blacksmith_heart0.dialogue-2614b02e59e6337e974c9df1012c3dca.tres"]
+
+[params]
+
+defaults=true

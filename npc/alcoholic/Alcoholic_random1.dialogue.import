@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ckda73hb0x7n6"
+path="res://.godot/imported/Alcoholic_random1.dialogue-0a71f0ad142055ed27795abb0d1bb186.tres"
+
+[deps]
+
+source_file="res://npc/alcoholic/Alcoholic_random1.dialogue"
+dest_files=["res://.godot/imported/Alcoholic_random1.dialogue-0a71f0ad142055ed27795abb0d1bb186.tres"]
+
+[params]
+
+defaults=true

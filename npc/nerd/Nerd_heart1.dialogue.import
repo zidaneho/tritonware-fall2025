@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c8rwngcbvthpo"
+path="res://.godot/imported/Nerd_heart1.dialogue-0959a04cb63ae14aaf77006f22d598b6.tres"
+
+[deps]
+
+source_file="res://npc/nerd/Nerd_heart1.dialogue"
+dest_files=["res://.godot/imported/Nerd_heart1.dialogue-0959a04cb63ae14aaf77006f22d598b6.tres"]
+
+[params]
+
+defaults=true

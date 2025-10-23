@@ -1,0 +1,11 @@
+~ start0
+: Nerd: Oh! A new variable in my environment. Hello.
+Nerd: I catalog slime behavior—elasticity, bounce frequency, and snack preference.
+Nerd: Quick survey: swords or spears?
+Nerd (choice): Sword -> Statistically favored. Stylish coefficient high.
+Nerd (choice): Spear -> Low availability in Blobtown; procurement cost spikes.
+=> END
+
+~ start1
+: Nerd: Hypothesis: the trash can is sentient. Evidence pending.
+=> END

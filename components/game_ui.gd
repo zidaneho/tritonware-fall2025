@@ -1,18 +1,23 @@
 extends CanvasLayer
 
 @onready var health_progress = $Container/PlayerInfoContainer/VBoxContainer/HealthContainer/ProgressBar
-@onready var slime_progress = $Container/GameInfoContainer/VBoxContainer/ProgressBar
-@onready var time_label = $Container/GameInfoContainer/VBoxContainer/TimeLabel
+@onready var slime_progress = $Container/GameInfoContainer/VBoxContainer/TimeInfo/ProgressBar
+@onready var time_label = $Container/GameInfoContainer/VBoxContainer/TimeInfo/TimeLabel
 
 @onready var curr_weapon_label = $Container/PlayerInfoContainer/VBoxContainer/WeaponContainer/HBoxContainer/Label
 @onready var curr_weapon_icon = $Container/PlayerInfoContainer/VBoxContainer/WeaponContainer/ItemContainer/TextureRect
 @onready var curr_weapon_ammostate = $Container/PlayerInfoContainer/VBoxContainer/WeaponContainer/HBoxContainer/AmmoState
-@onready var day_label = $Container/GameInfoContainer/VBoxContainer/DayLabel
+@onready var day_label = $Container/GameInfoContainer/VBoxContainer/TimeInfo/DayLabel
+@onready var time_manager = $"../TimeManager"
+@onready var apoc_manager = $"../SlimeOverloadManager"
+
 func _ready() -> void:
 	EventBus.player_took_damage.connect(update_health_bar)
 	EventBus.player_weapon_changed.connect(on_player_weapon_change)
 	EventBus.player_reloaded.connect(on_player_ammo_change)
 	EventBus.player_ammo_changed.connect(on_player_ammo_change)
+	time_manager.poll_initial_time()
+	apoc_manager.poll_initial_progress()
 	
 func _on_apoc_meter_manager_apoc_progress_updated(new_progress: int, max_progress: int) -> void:
 	slime_progress.value = new_progress

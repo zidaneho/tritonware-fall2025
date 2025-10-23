@@ -1,11 +1,17 @@
-[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://b3pvjt071rsb2"]
+[gd_resource type="Resource" script_class="NPCData" load_steps=8 format=3 uid="uid://b3pvjt071rsb2"]
 
 [ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_hx2yh"]
+[ext_resource type="Resource" uid="uid://d38f8hs6v32pk" path="res://npc/nerd/Nerd_random1.dialogue" id="2_65uqs"]
 [ext_resource type="Script" uid="uid://bbcl20g2ild8a" path="res://npc/NPCData.gd" id="2_cyf2w"]
 [ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="3_65uqs"]
+[ext_resource type="Resource" uid="uid://511qa3us7k4k" path="res://npc/nerd/Nerd_random2.dialogue" id="3_kjwbd"]
+[ext_resource type="Resource" uid="uid://b4qxknyy8rpya" path="res://npc/nerd/heart0.tres" id="6_1ewn2"]
+[ext_resource type="Resource" uid="uid://b54pgl7xn7yhx" path="res://npc/nerd/heart1.tres" id="7_iu602"]
 
 [resource]
 script = ExtResource("2_cyf2w")
 npc_name = "Nerd"
 npc_description = "A nerd"
+special_dialogue_map = Array[ExtResource("3_65uqs")]([ExtResource("6_1ewn2"), ExtResource("7_iu602"), null])
+normal_dialogues = Array[ExtResource("1_hx2yh")]([ExtResource("2_65uqs"), ExtResource("3_kjwbd")])
 metadata/_custom_type_script = "uid://bbcl20g2ild8a"

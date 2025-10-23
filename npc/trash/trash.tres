@@ -1,11 +1,16 @@
-[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://bbclxrhacrmy1"]
+[gd_resource type="Resource" script_class="NPCData" load_steps=7 format=3 uid="uid://bbclxrhacrmy1"]
 
 [ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_q5nnm"]
 [ext_resource type="Script" uid="uid://bbcl20g2ild8a" path="res://npc/NPCData.gd" id="2_1x23e"]
+[ext_resource type="Resource" uid="uid://jkk2pspprbso" path="res://npc/trash/Trash_random1.dialogue" id="2_r0jqy"]
+[ext_resource type="Resource" uid="uid://3p3s3j1sphhv" path="res://npc/trash/Trash_random2.dialogue" id="3_f6jgg"]
 [ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="3_fo448"]
+[ext_resource type="Resource" uid="uid://bwbvurdkwwdrk" path="res://npc/trash/heart0.tres" id="6_f6jgg"]
 
 [resource]
 script = ExtResource("2_1x23e")
 npc_name = "Trash"
 npc_description = "Trashy"
+special_dialogue_map = Array[ExtResource("3_fo448")]([ExtResource("6_f6jgg")])
+normal_dialogues = Array[ExtResource("1_q5nnm")]([ExtResource("2_r0jqy"), ExtResource("3_f6jgg")])
 metadata/_custom_type_script = "uid://bbcl20g2ild8a"

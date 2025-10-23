@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://vgk7faxuowrs"
+path="res://.godot/imported/Alcoholic_tabs.dialogue-5c9ea82c253cd607eab00d7eeb5cf841.tres"
+
+[deps]
+
+source_file="res://npc/alcoholic/Alcoholic_tabs.dialogue"
+dest_files=["res://.godot/imported/Alcoholic_tabs.dialogue-5c9ea82c253cd607eab00d7eeb5cf841.tres"]
+
+[params]
+
+defaults=true

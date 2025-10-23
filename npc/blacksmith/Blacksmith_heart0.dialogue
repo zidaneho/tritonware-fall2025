@@ -1,0 +1,19 @@
+~ start0
+: Blacksmith: Welcome to Blobtown! I’m the blacksmith around these parts. Feel free to bring any cash to buy some weapons.
+Blacksmith: Trust me. You’re gonna be needing them haha.
+Blacksmith: All I’m thinking about is having the Cook’s fried pan noodles…
+Blacksmith: What do you like better, swords or spears?
+Blacksmith (choice): Pick Sword -> Great choice!
+Blacksmith (choice): Pick Spear -> Good luck finding those around!
+Blacksmith (choice): Pick Gun -> ...What’s a gun?
+=> END
+
+~ start1
+: Blacksmith: Hey you look stronger than before, does fighting slimes actually work you out?
+=> END
+
+~ start2
+: Blacksmith: Have you seen the trash can around?
+Blacksmith (choice): Yes -> yeah that guy stinks. Stay away from him at all times.
+Blacksmith (choice): No -> Good.
+=> END

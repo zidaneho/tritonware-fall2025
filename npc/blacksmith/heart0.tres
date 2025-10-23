@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SpecialDialogueMapping" load_steps=3 format=3 uid="uid://fqyhga7hcdfe"]
+
+[ext_resource type="Resource" uid="uid://cpv62vhltqfh3" path="res://npc/blacksmith/Blacksmith_heart0.dialogue" id="1_0nl7x"]
+[ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="1_2rsol"]
+
+[resource]
+script = ExtResource("1_2rsol")
+dialogue = ExtResource("1_0nl7x")
+metadata/_custom_type_script = "uid://kgfee7o00a0n"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://wr0yg7c138ee"]
+[gd_scene load_steps=13 format=3 uid="uid://wr0yg7c138ee"]
 
 [ext_resource type="Script" uid="uid://ets28p33behg" path="res://npc/NPCInstance.gd" id="1_h2t1f"]
+[ext_resource type="Resource" uid="uid://bbclxrhacrmy1" path="res://npc/trash/trash.tres" id="2_l2p8b"]
 [ext_resource type="Texture2D" uid="uid://dxn7vx4pjy3wv" path="res://player/art/body_1.png" id="2_rggtb"]
 [ext_resource type="Texture2D" uid="uid://7ggfrao6pdjr" path="res://player/art/right_hand.png" id="3_p4ui6"]
 [ext_resource type="Texture2D" uid="uid://bo8xh5y3jie5s" path="res://player/art/left_hand.png" id="4_fmgsw"]
@@ -17,7 +18,8 @@ size = Vector2(81, 59.5)
 [node name="Trash" type="CharacterBody2D"]
 collision_layer = 8
 script = ExtResource("1_h2t1f")
-npc_id = "nerd"
+npc_data = ExtResource("2_l2p8b")
+npc_id = "trash"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -30.75)

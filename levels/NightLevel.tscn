@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://cu2gfv6r6dbvq"]
+[gd_scene load_steps=32 format=3 uid="uid://cu2gfv6r6dbvq"]
 
 [ext_resource type="PackedScene" uid="uid://bdy31fl3mxlr5" path="res://player/Player.tscn" id="1_h0kpy"]
 [ext_resource type="Texture2D" uid="uid://dthldkwyov8rr" path="res://levels/night_level1.png" id="1_sx6eq"]
 [ext_resource type="AudioStream" uid="uid://doeqm6q1ay7n6" path="res://audio/background/Combat (no intro).wav" id="2_hhu4n"]
-[ext_resource type="PackedScene" path="res://enemies/slime/SlimeSpawner.tscn" id="3_7dmf5"]
+[ext_resource type="PackedScene" uid="uid://v5ad364a4fk3" path="res://enemies/slime/SlimeSpawner.tscn" id="3_7dmf5"]
+[ext_resource type="PackedScene" uid="uid://cxdje51dh373j" path="res://button/button.tscn" id="5_1u6f6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0kpy"]
 size = Vector2(1304, 544)
@@ -933,3 +934,7 @@ position = Vector2(-4488, 112)
 
 [node name="SlimeSpawner4" parent="." instance=ExtResource("3_7dmf5")]
 position = Vector2(-2160, 152)
+
+[node name="button" parent="." instance=ExtResource("5_1u6f6")]
+position = Vector2(-408, -32)
+scale = Vector2(0.02, 0.02)

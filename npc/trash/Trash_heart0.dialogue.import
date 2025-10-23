@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://w1l8i4gqvu7s"
+path="res://.godot/imported/Trash_heart0.dialogue-9b1bb5866a4233e4e4588e1d0cb2fc68.tres"
+
+[deps]
+
+source_file="res://npc/trash/Trash_heart0.dialogue"
+dest_files=["res://.godot/imported/Trash_heart0.dialogue-9b1bb5866a4233e4e4588e1d0cb2fc68.tres"]
+
+[params]
+
+defaults=true

@@ -6,6 +6,11 @@ const SAVE_PATH = "user://game.save"
 # We set defaults for a new game.
 const saved_npc_states_default = {
 	"npc1":{"heart_level":0,"is_alive":true},
+	"blacksmith":{"heart_level":0,"is_alive":true},
+	"chef":{"heart_level":0,"is_alive":true},
+	"nerd":{"heart_level":0,"is_alive":true},
+	"trash":{"heart_level":0,"is_alive":true},
+	"alcoholic":{"heart_level":0,"is_alive":true},
 }
 var _last_day_slimes_killed = 0
 var game_data = {

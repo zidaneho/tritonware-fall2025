@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bbng8b7mdeevb"
+path="res://.godot/imported/Nerd_tabs.dialogue-3d6271812792b382abfce9eec8b883d6.tres"
+
+[deps]
+
+source_file="res://npc/nerd/Nerd_tabs.dialogue"
+dest_files=["res://.godot/imported/Nerd_tabs.dialogue-3d6271812792b382abfce9eec8b883d6.tres"]
+
+[params]
+
+defaults=true

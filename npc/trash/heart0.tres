@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SpecialDialogueMapping" load_steps=3 format=3 uid="uid://bwbvurdkwwdrk"]
+
+[ext_resource type="Resource" uid="uid://w1l8i4gqvu7s" path="res://npc/trash/Trash_heart0.dialogue" id="1_868ad"]
+[ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="2_ny7jk"]
+
+[resource]
+script = ExtResource("2_ny7jk")
+dialogue = ExtResource("1_868ad")
+metadata/_custom_type_script = "uid://kgfee7o00a0n"

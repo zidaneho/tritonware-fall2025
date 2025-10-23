@@ -1,0 +1,10 @@
+~ start0
+: Chef: Hey, are you the new guard? Please come by if you would like to eat something. I am still learning to cook though.
+Chef: Do you like my hat?
+Chef (choice): Yes -> Thanks! I really like it too. I got it from the master chef that came before me. For me, it is as if all the slimes had vanished from the world for a moment.
+Chef (choice): No -> No worries, I really like it though. I got it from the master chef that came before me. For me, it is as if all the slimes had vanished from the world for a moment. Thanks for asking haha.
+=> END
+
+~ start1
+: Chef: The blacksmith always comes by and orders pan-fried noodles. Do you think he has a diet problem?
+=> END

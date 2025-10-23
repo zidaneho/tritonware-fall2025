@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpecialDialogueMapping" load_steps=3 format=3 uid="uid://m1lgxff0y0lg"]
+
+[ext_resource type="Resource" uid="uid://bxob0pkomdpd8" path="res://npc/alcoholic/Alcoholic_heart1.dialogue" id="1_c4opl"]
+[ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="2_liykv"]
+
+[resource]
+script = ExtResource("2_liykv")
+heart_level = 1
+dialogue = ExtResource("1_c4opl")
+metadata/_custom_type_script = "uid://kgfee7o00a0n"

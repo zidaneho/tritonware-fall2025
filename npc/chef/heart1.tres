@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpecialDialogueMapping" load_steps=3 format=3 uid="uid://bhyb2x4awbtdp"]
+
+[ext_resource type="Resource" uid="uid://duetdjdes00p3" path="res://npc/chef/Chef_heart1.dialogue" id="1_8mqpb"]
+[ext_resource type="Script" uid="uid://kgfee7o00a0n" path="res://npc/SpecialDialogueMapping.gd" id="2_1wyth"]
+
+[resource]
+script = ExtResource("2_1wyth")
+heart_level = 1
+dialogue = ExtResource("1_8mqpb")
+metadata/_custom_type_script = "uid://kgfee7o00a0n"

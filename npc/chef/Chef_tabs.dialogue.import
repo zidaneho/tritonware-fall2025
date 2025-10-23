@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://6ewcujcnoh3q"
+path="res://.godot/imported/Chef_tabs.dialogue-3b62c9db3e47ce0b24e562bc5566175e.tres"
+
+[deps]
+
+source_file="res://npc/chef/Chef_tabs.dialogue"
+dest_files=["res://.godot/imported/Chef_tabs.dialogue-3b62c9db3e47ce0b24e562bc5566175e.tres"]
+
+[params]
+
+defaults=true

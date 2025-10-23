@@ -562,10 +562,6 @@ texture = ExtResource("1_fd2kr")
 region_enabled = true
 region_rect = Rect2(8195, 9024, 239, 260)
 
-[node name="Button" parent="CenterSide" instance=ExtResource("6_5xgmo")]
-position = Vector2(1121, -105)
-scale = Vector2(0.01, 0.01)
-
 [node name="SlimeSign" type="Sprite2D" parent="CenterSide"]
 position = Vector2(1290, -33.999996)
 scale = Vector2(0.05940991, 0.04971057)

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://511qa3us7k4k"
+path="res://.godot/imported/Nerd_random2.dialogue-d20fe9cd60eb581fa99763a32833d2be.tres"
+
+[deps]
+
+source_file="res://npc/nerd/Nerd_random2.dialogue"
+dest_files=["res://.godot/imported/Nerd_random2.dialogue-d20fe9cd60eb581fa99763a32833d2be.tres"]
+
+[params]
+
+defaults=true

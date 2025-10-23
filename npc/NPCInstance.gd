@@ -12,6 +12,7 @@ var canceled_dialogue_by_distance : bool = false
 var player : Node2D
 
 
+
 func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(on_dialogue_end)
 	if npc_id.is_empty():
