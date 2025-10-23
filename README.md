@@ -9,7 +9,7 @@ You are Blobtown’s last hope. Can you stop the invasion before it’s too late
 A: move left
 D: move right
 F: interact
-E: equip weapon
+E: equip/swap weapons
 left click: shoot
 space: jump or talk to npc
 double space: double jump
