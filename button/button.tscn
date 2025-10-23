@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxdje51dh373j"]
+[gd_scene load_steps=12 format=3 uid="uid://cxdje51dh373j"]
 
 [ext_resource type="Script" uid="uid://4t8ds8ipuu0f" path="res://button/button.gd" id="1_6ewp6"]
 [ext_resource type="Texture2D" uid="uid://cgbnmsmiwdvnk" path="res://button/button_neutral.png" id="1_38736"]
 [ext_resource type="Texture2D" uid="uid://dwgwi8js1wfi7" path="res://button/button_pressed_1.png" id="2_x4vop"]
 [ext_resource type="Texture2D" uid="uid://clntpn32veur0" path="res://button/button_pressed_2.png" id="3_67klq"]
 [ext_resource type="Texture2D" uid="uid://bt467yragyglw" path="res://button/button_pressed_3.png" id="4_6ewp6"]
+[ext_resource type="Script" uid="uid://bcr31kah27n4y" path="res://button/animatedButton.gd" id="6_ekjhl"]
 [ext_resource type="AudioStream" uid="uid://8662b13ectgp" path="res://button/SFX_ElevatorButtonv3.wav" id="6_p16c8"]
 [ext_resource type="AudioStream" uid="uid://diq8h2tic7uq" path="res://button/SFX_ElevatorButtonv2.wav" id="7_ekjhl"]
 
@@ -40,26 +41,39 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_38736")
 }],
-"loop": true,
+"loop": false,
 "name": &"pressed",
 "speed": 5.0
 }]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hwv1a"]
-random_pitch = 1.3
 streams_count = 1
 stream_0/stream = ExtResource("6_p16c8")
 
-[node name="Button" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p16c8"]
+size = Vector2(1846, 2826)
+
+[node name="button" type="Node2D"]
 script = ExtResource("1_6ewp6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p16c8")
 animation = &"pressed"
-frame_progress = 0.24109693
+script = ExtResource("6_ekjhl")
 
 [node name="NormalButtonAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hwv1a")
 
 [node name="DarkButtonAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ekjhl")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(152, 506)
+shape = SubResource("RectangleShape2D_p16c8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

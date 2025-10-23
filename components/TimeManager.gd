@@ -46,6 +46,7 @@ func _on_tick():
 		minutes = 0
 		is_am = start_is_am
 		DataManager.set_time(current_day, hours, minutes, is_am)
+		DataManager.set_button_pressed(false)
 		DataManager.save_game()
 		day_over.emit()
 		minute_timer.start()

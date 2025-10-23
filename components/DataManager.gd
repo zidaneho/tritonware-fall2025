@@ -19,6 +19,7 @@ var game_data = {
 	"gametime_minutes":0,
 	"gametime_is_am" : true,
 	"slime_apoc_progress":0,
+	"button_pressed":false
 }
 
 
@@ -97,10 +98,13 @@ func set_last_day_stats(slimes_killed: int):
 
 func get_last_day_slimes_killed() -> int:
 	return _last_day_slimes_killed
+
+func get_button_pressed():
+	return game_data.button_pressed
+func set_button_pressed(pressed: bool):
+	game_data.button_pressed = pressed
+
 # --- Save/Load Logic (The core of the manager) ---
-
-
-
 func save_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file == null:
@@ -159,7 +163,7 @@ func load_game():
 	game_data.gametime_minutes = save_dict.get("gametime_minutes",0)
 	game_data.gametime_is_am = save_dict.get("gametime_is_am",true)
 	game_data.slime_apoc_progress = save_dict.get("slime_apoc_progress",0)
-	
+	game_data.button_pressed = save_dict.get("button_pressed",false)
 
 	# 2. Convert saved weapon paths back into loaded WeaponData resources
 	game_data.unlocked_weapons.clear()
@@ -185,6 +189,7 @@ func start_new_game():
 		"gametime_minutes":0,
 		"gametime_is_am" : true,
 		"slime_apoc_progress":0,
+		"button_pressed":false,
 	}
 	save_game()
 	print("Data Manager: Started new game, save file reset to defaults.")
