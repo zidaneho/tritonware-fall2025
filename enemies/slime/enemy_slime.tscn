@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbqtin2aa8fvc"]
+[gd_scene load_steps=11 format=3 uid="uid://bbqtin2aa8fvc"]
 
 [ext_resource type="Texture2D" uid="uid://dotab23r7ixvv" path="res://enemies/slime/slime_idle.png" id="1_hmymp"]
 [ext_resource type="Script" uid="uid://cxegb3dfpiukf" path="res://enemies/slime/enemy_slime.gd" id="1_opsid"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://mc7u8yo0n1wg" path="res://enemies/slime/slime_chomp2.png" id="4_a7sra"]
 [ext_resource type="Texture2D" uid="uid://dv3616ist5d8s" path="res://enemies/slime/slime_jump.png" id="5_eqnqt"]
 [ext_resource type="Texture2D" uid="uid://cym1dulmwbr1v" path="res://enemies/slime/slime_die.png" id="6_q6clb"]
+[ext_resource type="AudioStream" uid="uid://bkgk4iuhwstl8" path="res://audio/weapons/SFX_SlimeKilledv1wav.wav" id="8_d8ro5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjgn1"]
 radius = 24.0
@@ -71,3 +72,6 @@ position = Vector2(1, -11)
 shape = SubResource("CircleShape2D_opsid")
 
 [node name="FlashTimer" type="Timer" parent="."]
+
+[node name="SlimeDeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_d8ro5")

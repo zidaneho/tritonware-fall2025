@@ -18,6 +18,8 @@ var weapon_instances : Dictionary = {}
 
 @export var test_weapons : Array[WeaponData]
 
+
+
 func _ready() -> void:
 	# 1. Get the persistent list from our global singleton
 	unlocked_weapons = DataManager.get_unlocked_weapons()

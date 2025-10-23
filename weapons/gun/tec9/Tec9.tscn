@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1t1i75ao4n8y"]
+[gd_scene load_steps=12 format=3 uid="uid://b1t1i75ao4n8y"]
 
 [ext_resource type="Script" uid="uid://bsh1efaxetkw7" path="res://weapons/gun/pistol/pistol.gd" id="1_stx6i"]
 [ext_resource type="Texture2D" uid="uid://bpv7rptfuehmt" path="res://weapons/gun/tec9/tec9.png" id="2_5vlch"]
 [ext_resource type="Texture2D" uid="uid://cvqss1f7dmna" path="res://weapons/gun/utils/muzzleFlare.png" id="3_0crqt"]
+[ext_resource type="AudioStream" uid="uid://davl8oxaxps0y" path="res://audio/weapons/gun/SFX_SciFiGunsSingleShots,Pistol,8.wav" id="4_st3vg"]
+[ext_resource type="AudioStream" uid="uid://dk3x67gosrjag" path="res://audio/weapons/gun/SFX_Reload02.wav" id="5_4ieso"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_16sjl"]
 blend_mode = 1
@@ -68,3 +70,9 @@ process_material = SubResource("ParticleProcessMaterial_sy7wo")
 [node name="ReloadTimer" type="Timer" parent="."]
 
 [node name="FireRateTimer" type="Timer" parent="."]
+
+[node name="FireAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_st3vg")
+
+[node name="ReloadAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4ieso")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmgf2c4hjo7cm"]
+[gd_scene load_steps=14 format=3 uid="uid://dmgf2c4hjo7cm"]
 
 [ext_resource type="Script" uid="uid://dw1ft1nrhawii" path="res://npc/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://c3d37m1pdwec7" path="res://icon.svg" id="2_gyg7o"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="AudioStream" uid="uid://irt0t0hmxurr" path="res://audio/dialogue/Collection1/SFX_JRPGC101.wav" id="5_aa2ko"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -203,5 +204,9 @@ text = "Response example"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 
+[node name="TalkSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_aa2ko")
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

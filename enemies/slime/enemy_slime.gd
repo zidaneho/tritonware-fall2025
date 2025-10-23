@@ -22,6 +22,7 @@ signal died(slime: CharacterBody2D)
 @onready var sprites = $Sprites # <--- ADD THIS
 @onready var collision_shape = $CollisionShape2D # <--- ADD THIS
 @onready var detection_shape = $DetectionArea/CollisionShape2D
+@onready var death_sound = $SlimeDeathSound
 
 enum SlimeStates {
 	IDLE,
@@ -60,7 +61,7 @@ func _process(_delta: float) -> void:
 		is_dead = true
 		EventBus.slime_killed.emit()
 		get_tree().create_timer(0.3).timeout.connect(return_to_pool)
-	
+		death_sound.play()
 	match state:
 		SlimeStates.IDLE:
 			play_sprite("Idle")

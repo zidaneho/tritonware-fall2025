@@ -6,7 +6,8 @@ extends Gun
 @export var muzzlePosition : Marker2D
 @export var muzzleParticle : GPUParticles2D
 const TracerScene = preload('res://weapons/gun/utils/tracer.tscn')
-
+@onready var fire_audio = $FireAudio
+@onready var reload_audio = $ReloadAudio
 var can_fire : bool = true
 
 func _ready() -> void:
@@ -21,6 +22,7 @@ func reload():
 	if not reload_timer.is_stopped():
 		return
 	reload_timer.start(reload_time)
+	reload_audio.play()
 
 func shoot():
 	if current_ammo <= 0:
@@ -33,6 +35,7 @@ func shoot():
 		return
 	
 	can_fire = false
+	fire_audio.play()
 	current_ammo -= 1
 	if muzzleParticle:
 		if muzzleParticle.emitting:

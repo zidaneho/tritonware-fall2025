@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdg2sqmngc3ve"]
+[gd_scene load_steps=12 format=3 uid="uid://cdg2sqmngc3ve"]
 
 [ext_resource type="Script" uid="uid://bsh1efaxetkw7" path="res://weapons/gun/pistol/pistol.gd" id="1_n2d5l"]
 [ext_resource type="Texture2D" uid="uid://dfo0hwlsxhk0u" path="res://weapons/gun/dead_gun/dead_gun.png" id="2_o6s10"]
 [ext_resource type="Texture2D" uid="uid://cvqss1f7dmna" path="res://weapons/gun/utils/muzzleFlare.png" id="3_5nhoj"]
+[ext_resource type="AudioStream" uid="uid://davl8oxaxps0y" path="res://audio/weapons/gun/SFX_SciFiGunsSingleShots,Pistol,8.wav" id="4_r0pkl"]
+[ext_resource type="AudioStream" uid="uid://dk3x67gosrjag" path="res://audio/weapons/gun/SFX_Reload02.wav" id="5_dg3eu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_16sjl"]
 blend_mode = 1
@@ -42,7 +44,7 @@ muzzlePosition = NodePath("Muzzle")
 muzzleParticle = NodePath("Muzzle/MuzzleParticle")
 gun_name = "DeadGun"
 damage = 2
-fire_rate = 10.0
+fire_rate = 15.0
 mag_size = 20
 range = 2000.0
 
@@ -69,3 +71,9 @@ process_material = SubResource("ParticleProcessMaterial_sy7wo")
 [node name="ReloadTimer" type="Timer" parent="."]
 
 [node name="FireRateTimer" type="Timer" parent="."]
+
+[node name="FireAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_r0pkl")
+
+[node name="ReloadAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dg3eu")
