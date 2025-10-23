@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmwlhxyxn8tb8"]
+
+[ext_resource type="Script" uid="uid://bc10on0rcb8rv" path="res://legend/legend_full/legend_full.gd" id="1_moxgi"]
+[ext_resource type="AudioStream" uid="uid://cx3vjvf2jpivm" path="res://audio/background/Ending.wav" id="2_kbxtn"]
+
+[node name="Legend" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_moxgi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DialogueLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_kbxtn")
+volume_db = 2.02
