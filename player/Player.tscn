@@ -392,9 +392,11 @@ start_unarmed = true
 
 [node name="DirtFootstepAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_234y4")
+volume_db = 7.573
 
 [node name="GravelFootstepAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_u8vxv")
+volume_db = 7.845
 
 [node name="DashAudio" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_8tqfn")

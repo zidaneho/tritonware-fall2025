@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var invincibility_timer = $InvincibilityTimer
 @onready var animation_player = $AnimationPlayer
 @onready var weapon_manager = $WeaponManager
+@onready var gravel_footstep = $GravelFootstepAudio
 
 var SPEED = 500
 var GRAVITY_PERC = 1.5
@@ -66,6 +67,7 @@ func _physics_process(delta):
 			animation_player.play("Run")
 			velocity.x = direction * SPEED
 			sprites.scale.x = sign(direction) * SPRITE_SCALE
+			gravel_footstep.play()
 		else:
 			animation_player.play("Idle")
 			velocity.x = move_toward(velocity.x, 0, SPEED * 0.2)
